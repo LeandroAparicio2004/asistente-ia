@@ -2,103 +2,103 @@
   "conversaciones": [
     {
       "rol": "user",
-      "contenido": "reproduce una cancion de \"Nirvana\"",
-      "timestamp": "2026-06-04T15:22:36.570319"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de Nirvana",
-      "timestamp": "2026-06-04T15:22:37.811762"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce una cancion de Vegetta777",
-      "timestamp": "2026-06-04T15:23:14.694159"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de Vegetta777",
-      "timestamp": "2026-06-04T15:23:15.240432"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce una cancion de Zarcort",
-      "timestamp": "2026-06-04T15:45:23.758053"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de Zarcort",
-      "timestamp": "2026-06-04T15:45:24.538872"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce un video de Zarcort",
-      "timestamp": "2026-06-04T15:45:44.449938"
+      "contenido": "Pon algo de Rock en Spotify",
+      "timestamp": "2026-06-05T02:07:58.693981"
     },
     {
       "rol": "assistant",
       "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-04T15:45:44.461669"
+      "timestamp": "2026-06-05T02:07:58.695980"
     },
     {
       "rol": "user",
-      "contenido": "Reproduce un video de ZarcortGames",
-      "timestamp": "2026-06-04T15:46:08.147379"
+      "contenido": "reproduce un video de ZarcortGames",
+      "timestamp": "2026-06-05T02:12:57.321308"
     },
     {
       "rol": "assistant",
       "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-04T15:46:08.158693"
+      "timestamp": "2026-06-05T02:12:57.322307"
     },
     {
       "rol": "user",
-      "contenido": "reproduce una cancion de los chinos mandarina",
-      "timestamp": "2026-06-04T15:46:28.810228"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de los chinos mandarina",
-      "timestamp": "2026-06-04T15:46:29.419379"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce una cancion de BTS",
-      "timestamp": "2026-06-04T15:46:57.596032"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de BTS",
-      "timestamp": "2026-06-04T15:46:58.433472"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce una cancion de BTS",
-      "timestamp": "2026-06-04T15:47:23.973393"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de BTS",
-      "timestamp": "2026-06-04T15:47:24.527521"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce otra cancion de BTS",
-      "timestamp": "2026-06-04T15:47:46.394267"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "reproducir cancion de BTS",
-      "timestamp": "2026-06-04T15:47:46.836050"
-    },
-    {
-      "rol": "user",
-      "contenido": "reproduce la cancion la cancion mas conocida de BTS",
-      "timestamp": "2026-06-04T15:48:15.862358"
+      "contenido": "reproduce una cancion de Oscu",
+      "timestamp": "2026-06-05T02:14:26.364122"
     },
     {
       "rol": "assistant",
       "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-04T15:48:15.872664"
+      "timestamp": "2026-06-05T02:14:26.366125"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de Oscu en Youtube",
+      "timestamp": "2026-06-05T02:14:46.556189"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:14:46.558192"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de Oscu en youtube",
+      "timestamp": "2026-06-05T02:14:59.319909"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:14:59.321908"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce un video de Oscu en youtube",
+      "timestamp": "2026-06-05T02:15:13.291915"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:15:13.293912"
+    },
+    {
+      "rol": "user",
+      "contenido": "Pon algo de Rock en youtube",
+      "timestamp": "2026-06-05T02:16:18.522931"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:16:18.524932"
+    },
+    {
+      "rol": "user",
+      "contenido": "pon algo de Rock en youtube",
+      "timestamp": "2026-06-05T02:16:45.983031"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:16:45.985031"
+    },
+    {
+      "rol": "user",
+      "contenido": "pon come as you are de nirvana en spotify",
+      "timestamp": "2026-06-05T02:17:40.233798"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:17:40.234799"
+    },
+    {
+      "rol": "user",
+      "contenido": "Pon come as you are de nirvana en spotify",
+      "timestamp": "2026-06-05T02:18:04.414054"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-05T02:18:04.416053"
     }
   ],
   "contexto": {}

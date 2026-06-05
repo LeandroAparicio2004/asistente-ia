@@ -269,28 +269,28 @@ PATRONES = [
 
 # ─── REPRODUCIR MÚSICA (YOUTUBE - SPOTIFY) _ REPRODUCIR VIDEOS (YOUTUBE) ────────────────────────────────────────────────────────
 
-    # Reproducir VIDEO (YOUTUBE)
+    # Reproducir VIDEO (YOUTUBE) — excluye palabras musicales
     (r"(?:reproducí|reproduce|reproduci)\s+(?:un\s+)?video\s+de\s+(.+)",
      "reproducir_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "youtube", "tipo": "video"}),
 
-    # Reproducir MÚSICA (YOUTUBE)
-    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon|escuchar?)\s+(?:la\s+canción\s+|la\s+cancion\s+|música\s+de\s+|musica\s+de\s+|canciones?\s+de\s+|algo\s+de\s+)?(.+?)\s+en\s+youtube",
+    # Reproducir MÚSICA en YouTube — con "en youtube" al final
+    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon|escuchar?)\s+(.+?)\s+en\s+youtube",
      "reproducir_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "youtube", "tipo": "musica"}),
 
-    # Reproducir MÚSICA (SPOTIFY)
-    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon|escuchar?)\s+(?:la\s+canción\s+|la\s+cancion\s+|música\s+de\s+|musica\s+de\s+|canciones?\s+de\s+|algo\s+de\s+)?(.+?)\s+en\s+spotify",
+    # Reproducir MÚSICA en Spotify — con "en spotify" al final
+    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon|escuchar?)\s+(.+?)\s+en\s+spotify",
      "reproducir_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "spotify", "tipo": "musica"}),
 
-    # Reproducir MÚSICA genérico (SPOTIFY)
-    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon)\s+(?:la\s+canción\s+|la\s+cancion\s+|música\s+de\s+|musica\s+de\s+|canciones?\s+de\s+|algo\s+de\s+)(.+)",
+    # Reproducir MÚSICA genérico sin plataforma
+    (r"(?:reproducí|reproduce|reproduci|poné|pone|pon)\s+(?:una?\s+canción\s+de\s+|una?\s+cancion\s+de\s+|música\s+de\s+|musica\s+de\s+|canciones?\s+de\s+|algo\s+de\s+)(.+)",
      "reproducir_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "spotify", "tipo": "musica"}),
 
-    # Buscar música (SPOTIFY)
-    (r"(?:buscá|busca)\s+(?:la\s+canción\s+|la\s+cancion\s+|música\s+de\s+|musica\s+de\s+)?(.+?)\s+en\s+spotify",
+    # Buscar música en Spotify
+    (r"(?:buscá|busca)\s+(.+?)\s+en\s+spotify",
      "buscar_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "spotify"}),
 
-    # Buscar música(YOUTUBE)
-    (r"(?:buscá|busca)\s+(?:la\s+canción\s+|la\s+cancion\s+|música\s+de\s+|musica\s+de\s+)?(.+?)\s+en\s+youtube",
+    # Buscar música en YouTube
+    (r"(?:buscá|busca)\s+(.+?)\s+en\s+youtube",
      "buscar_musica", lambda m: {"consulta": m.group(1).strip(), "plataforma": "youtube"}),
 ]
 

@@ -205,6 +205,8 @@ def reproducir_musica(consulta: str, plataforma: str = "youtube", tipo: str = "m
         # Ajustar búsqueda según tipo
         if tipo == "musica":
             consulta_busqueda = f"{consulta} official audio"
+        elif tipo == "video":
+            consulta_busqueda = f"{consulta} -official -audio -lyrics -letra"
         else:
             consulta_busqueda = consulta
 

@@ -1,0 +1,30 @@
+# Variables de entorno - NUNCA subir
+.env
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Datos locales - cada PC tiene los suyos
+data/app_cache.json
+
+# Imágenes y capturas del sandbox
+sandbox/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

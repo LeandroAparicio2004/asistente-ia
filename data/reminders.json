@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1778745323,
+    "mensaje": "Tomar agua",
+    "cuando": "2026-05-14T04:56:23.593185",
+    "disparado": true
+  },
+  {
+    "id": 1778745678,
+    "mensaje": "Recuerda tomar agua",
+    "cuando": "2026-05-14T05:02:18.655071",
+    "disparado": true
+  },
+  {
+    "id": 1778745852,
+    "mensaje": "Son las {hora}",
+    "cuando": "2026-05-14T05:04:42.560911",
+    "disparado": true
+  },
+  {
+    "id": 1778796979,
+    "mensaje": "Son las ",
+    "cuando": "2026-05-14T19:17:19.289834",
+    "disparado": true
+  },
+  {
+    "id": 1778809641,
+    "mensaje": "Son las ",
+    "cuando": "2026-05-14T22:48:21.994131",
+    "disparado": true
+  },
+  {
+    "id": 1778809826,
+    "mensaje": "Son las 22:51",
+    "cuando": "2026-05-14T22:51:26.185319",
+    "disparado": true
+  }
+]

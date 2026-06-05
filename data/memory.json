@@ -1,0 +1,105 @@
+{
+  "conversaciones": [
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de \"Nirvana\"",
+      "timestamp": "2026-06-04T15:22:36.570319"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de Nirvana",
+      "timestamp": "2026-06-04T15:22:37.811762"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de Vegetta777",
+      "timestamp": "2026-06-04T15:23:14.694159"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de Vegetta777",
+      "timestamp": "2026-06-04T15:23:15.240432"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de Zarcort",
+      "timestamp": "2026-06-04T15:45:23.758053"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de Zarcort",
+      "timestamp": "2026-06-04T15:45:24.538872"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce un video de Zarcort",
+      "timestamp": "2026-06-04T15:45:44.449938"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-04T15:45:44.461669"
+    },
+    {
+      "rol": "user",
+      "contenido": "Reproduce un video de ZarcortGames",
+      "timestamp": "2026-06-04T15:46:08.147379"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-04T15:46:08.158693"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de los chinos mandarina",
+      "timestamp": "2026-06-04T15:46:28.810228"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de los chinos mandarina",
+      "timestamp": "2026-06-04T15:46:29.419379"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de BTS",
+      "timestamp": "2026-06-04T15:46:57.596032"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de BTS",
+      "timestamp": "2026-06-04T15:46:58.433472"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce una cancion de BTS",
+      "timestamp": "2026-06-04T15:47:23.973393"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de BTS",
+      "timestamp": "2026-06-04T15:47:24.527521"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce otra cancion de BTS",
+      "timestamp": "2026-06-04T15:47:46.394267"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reproducir cancion de BTS",
+      "timestamp": "2026-06-04T15:47:46.836050"
+    },
+    {
+      "rol": "user",
+      "contenido": "reproduce la cancion la cancion mas conocida de BTS",
+      "timestamp": "2026-06-04T15:48:15.862358"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar reproducir_musica",
+      "timestamp": "2026-06-04T15:48:15.872664"
+    }
+  ],
+  "contexto": {}
+}

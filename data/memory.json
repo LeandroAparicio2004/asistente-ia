@@ -2,103 +2,103 @@
   "conversaciones": [
     {
       "rol": "user",
-      "contenido": "Pon algo de Rock en Spotify",
-      "timestamp": "2026-06-05T02:07:58.693981"
+      "contenido": "resume este texto: La historia de la computadora comenzó hace miles de años con el ábaco, pero la idea del diseño moderno nació en el siglo XIX cuando Charles Babbage ideó la Máquina Analítica, la primera computadora programable de la historia, para la cual Ada Lovelace escribió el primer algoritmo. La era digital real arrancó en la década de 1940 con enormes máquinas como la ENIAC, las cuales llenaban habitaciones enteras y funcionaban con miles de ruidosas válvulas de vacío que consumían mucha electricidad. Todo cambió en la década de 1950 gracias al invento del transistor, un componente diminuto que permitió hacer estos equipos más rápidos y pequeños. Poco después, en los años 60, llegaron los circuitos integrados, unos chips de silicio que unían miles de transistores en un solo espacio y dieron vida a las primeras pantallas y teclados. El gran salto al mundo actual ocurrió en la década de 1970 con la creación del microprocesador, que metió el cerebro entero de la máquina en un solo chip y permitió el nacimiento de las computadoras personales que usamos en casa y el trabajo. Hoy en día, esta evolución continúa a pasos agigantados hacia una nueva era guiada por la computación en la nube, los teléfonos inteligentes, la computación cuántica y los sistemas avanzados de inteligencia artificial.",
+      "timestamp": "2026-06-06T03:41:49.803521"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:07:58.695980"
+      "contenido": "La historia de la computadora comenzó con el ábaco y evolucionó a través de los siglos con inventos como la Máquina Analítica, el transistor, los circuitos integrados y el microprocesador, llegando a la era actual de la computación en la nube y la inteligencia artificial",
+      "timestamp": "2026-06-06T03:41:50.681477"
     },
     {
       "rol": "user",
-      "contenido": "reproduce un video de ZarcortGames",
-      "timestamp": "2026-06-05T02:12:57.321308"
+      "contenido": "cuantos son 5 kilometros en millas?",
+      "timestamp": "2026-06-06T03:42:34.037400"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:12:57.322307"
+      "contenido": "5 kilómetros son aproximadamente 3.107 millas",
+      "timestamp": "2026-06-06T03:42:34.498444"
     },
     {
       "rol": "user",
-      "contenido": "reproduce una cancion de Oscu",
-      "timestamp": "2026-06-05T02:14:26.364122"
+      "contenido": "genera una contraseña segura",
+      "timestamp": "2026-06-06T03:42:50.358676"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:14:26.366125"
+      "contenido": "generar una contraseña segura",
+      "timestamp": "2026-06-06T03:42:50.837121"
     },
     {
       "rol": "user",
-      "contenido": "reproduce una cancion de Oscu en Youtube",
-      "timestamp": "2026-06-05T02:14:46.556189"
+      "contenido": "abre esta url: https://www.youtube.com",
+      "timestamp": "2026-06-06T03:43:54.693742"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:14:46.558192"
+      "contenido": "Ejecutar abrir_programa",
+      "timestamp": "2026-06-06T03:43:54.695742"
     },
     {
       "rol": "user",
-      "contenido": "reproduce una cancion de Oscu en youtube",
-      "timestamp": "2026-06-05T02:14:59.319909"
+      "contenido": "Generá una contraseña",
+      "timestamp": "2026-06-06T04:22:35.306177"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:14:59.321908"
+      "contenido": "Ejecutar generar_contrasena",
+      "timestamp": "2026-06-06T04:22:35.307176"
     },
     {
       "rol": "user",
-      "contenido": "reproduce un video de Oscu en youtube",
-      "timestamp": "2026-06-05T02:15:13.291915"
+      "contenido": "Abrí google.com",
+      "timestamp": "2026-06-06T04:22:53.591816"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:15:13.293912"
+      "contenido": "Ejecutar abrir_programa",
+      "timestamp": "2026-06-06T04:22:53.593815"
     },
     {
       "rol": "user",
-      "contenido": "Pon algo de Rock en youtube",
-      "timestamp": "2026-06-05T02:16:18.522931"
+      "contenido": "Abrí google.com\n en el navegador",
+      "timestamp": "2026-06-06T04:23:03.903234"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:16:18.524932"
+      "contenido": "Ejecutar abrir_programa",
+      "timestamp": "2026-06-06T04:23:03.904238"
     },
     {
       "rol": "user",
-      "contenido": "pon algo de Rock en youtube",
-      "timestamp": "2026-06-05T02:16:45.983031"
+      "contenido": "busca google.com",
+      "timestamp": "2026-06-06T04:23:34.634256"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:16:45.985031"
+      "contenido": "Ejecutar buscar_en_internet",
+      "timestamp": "2026-06-06T04:23:34.636256"
     },
     {
       "rol": "user",
-      "contenido": "pon come as you are de nirvana en spotify",
-      "timestamp": "2026-06-05T02:17:40.233798"
+      "contenido": "abre la pagina google.com",
+      "timestamp": "2026-06-06T04:23:47.418396"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:17:40.234799"
+      "contenido": "Ejecutar abrir_programa",
+      "timestamp": "2026-06-06T04:23:47.420393"
     },
     {
       "rol": "user",
-      "contenido": "Pon come as you are de nirvana en spotify",
-      "timestamp": "2026-06-05T02:18:04.414054"
+      "contenido": "abre https://www.youtube.com",
+      "timestamp": "2026-06-06T04:29:35.013252"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar reproducir_musica",
-      "timestamp": "2026-06-05T02:18:04.416053"
+      "contenido": "Ejecutar abrir_url",
+      "timestamp": "2026-06-06T04:29:35.014257"
     }
   ],
   "contexto": {}

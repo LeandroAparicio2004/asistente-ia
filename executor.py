@@ -49,7 +49,8 @@ from memory import limpiar_memoria
 from actions.utilidades import (
     generar_qr, calcular, calcular_porcentaje,
     traducir, corregir_texto, analizar_imagen,
-    reproducir_musica, buscar_musica
+    reproducir_musica, buscar_musica,
+    generar_contrasena, abrir_url
 )
 
 from actions.notas import (
@@ -271,4 +272,7 @@ ACCIONES = {
     "reproducir_musica": reproducir_musica,
     "reproducir_musica": reproducir_musica,
     "buscar_musica": buscar_musica,
+    #Accesos
+    "generar_contrasena": generar_contrasena,
+    "abrir_url": abrir_url,
 }

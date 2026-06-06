@@ -189,83 +189,63 @@ def analizar_imagen(nombre_imagen: str, pregunta: str = "") -> str:
     
     # ─── MÚSICA ───────────────────────────────────────────────────────────────────
 
-def reproducir_musica(consulta: str, plataforma: str = "youtube", tipo: str = "musica") -> str:
-    """Busca la canción y abre el primer resultado directo."""
+def reproducir_musica(consulta: str = "", plataforma: str = "spotify", tipo: str = "musica", **kwargs) -> str:
     try:
         import webbrowser
+        import requests
+        import random
         from urllib.parse import quote
         from config import YOUTUBE_API_KEY
 
+        # Si la IA mandó parámetros alternativos, usarlos
+        if not consulta:
+            consulta = kwargs.get("artista") or kwargs.get("cancion") or kwargs.get("nombre") or kwargs.get("query") or ""
+        if not consulta:
+            return "❌ No especificaste qué reproducir."
+
         plataforma_lower = plataforma.lower().strip()
+        consulta_limpia = consulta.strip().strip('"').strip("'")
 
+        # ─── SPOTIFY ──────────────────────────────────────────────────────────
         if "spotify" in plataforma_lower:
-            webbrowser.open(f"spotify:search:{consulta}")
-            return f"🎵 Abriendo '{consulta}' en Spotify..."
+            webbrowser.open(f"spotify:search:{consulta_limpia}")
+            return f"🎵 Abriendo '{consulta_limpia}' en Spotify..."
 
-        # Ajustar búsqueda según tipo
+        # ─── YOUTUBE MUSIC (para canciones) ───────────────────────────────────
         if tipo == "musica":
-            consulta_busqueda = f"{consulta} official audio"
-        elif tipo == "video":
-            consulta_busqueda = f"{consulta} -official -audio -lyrics -letra"
-        else:
-            consulta_busqueda = consulta
+            consulta_encoded = quote(consulta_limpia)
+            url = f"https://music.youtube.com/search?q={consulta_encoded}"
+            webbrowser.open(url)
+            return f"🎵 Buscando '{consulta_limpia}' en YouTube Music..."
 
-        # YouTube — buscar con la API
-        if YOUTUBE_API_KEY:
-            import requests
-            import random
-            url = "https://www.googleapis.com/youtube/v3/search"
-            params = {
-                "part": "snippet",
-                "q": consulta_busqueda,
-                "type": "video",
-                "maxResults": 5,
-                "key": YOUTUBE_API_KEY
-            }
-            response = requests.get(url, params=params, timeout=8)
-            data = response.json()
+        # ─── YOUTUBE NORMAL (para videos) ─────────────────────────────────────
+        if tipo == "video":
+            if YOUTUBE_API_KEY:
+                url_api = "https://www.googleapis.com/youtube/v3/search"
+                params = {
+                    "part": "snippet",
+                    "q": f"{consulta_limpia} video",
+                    "type": "video",
+                    "videoCategoryId": "20",
+                    "maxResults": 5,
+                    "key": YOUTUBE_API_KEY
+                }
+                response = requests.get(url_api, params=params, timeout=8)
+                data = response.json()
+                if data.get("items"):
+                    item = random.choice(data["items"])
+                    video_id = item["id"]["videoId"]
+                    webbrowser.open(f"https://www.youtube.com/watch?v={video_id}")
+                    titulo = item["snippet"]["title"]
+                    return f"▶️ Reproduciendo video: '{titulo}'"
 
-            if data.get("items"):
-                item = random.choice(data["items"])
-                video_id = item["id"]["videoId"]
-                video_url = f"https://www.youtube.com/watch?v={video_id}"
-                webbrowser.open(video_url)
-                titulo = item["snippet"]["title"]
-                return f"🎵 Reproduciendo: '{titulo}'"
+            # Fallback
+            webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta_limpia)}")
+            return f"▶️ Buscando video '{consulta_limpia}' en YouTube..."
 
-        # Fallback sin API
-        webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta_busqueda)}")
-        return f"🎵 Buscando '{consulta}' en YouTube..."
-
-    except Exception as e:
-        return f"❌ Error: {str(e)}"
-
-# YouTube — buscar primer video con la API
-        if YOUTUBE_API_KEY:
-            import requests
-            import random
-            url = "https://www.googleapis.com/youtube/v3/search"
-            params = {
-                "part": "snippet",
-                "q": consulta,
-                "type": "video",
-                "maxResults": 5,
-                "key": YOUTUBE_API_KEY
-            }
-            response = requests.get(url, params=params, timeout=8)
-            data = response.json()
-
-            if data.get("items"):
-                item = random.choice(data["items"])
-                video_id = item["id"]["videoId"]
-                video_url = f"https://www.youtube.com/watch?v={video_id}"
-                webbrowser.open(video_url)
-                titulo = item["snippet"]["title"]
-                return f"🎵 Reproduciendo: '{titulo}'"
-
-        # Fallback sin API
-        webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta)}")
-        return f"🎵 Buscando '{consulta}' en YouTube..."
+        # ─── FALLBACK GENÉRICO ────────────────────────────────────────────────
+        webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta_limpia)}")
+        return f"🎵 Buscando '{consulta_limpia}' en YouTube..."
 
     except Exception as e:
         return f"❌ Error: {str(e)}"
@@ -288,5 +268,38 @@ def buscar_musica(consulta: str, plataforma: str = "youtube") -> str:
             webbrowser.open(url)
             return f"🔍 Buscando '{consulta}' en YouTube..."
 
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+    
+    # ─── GENERADOR DE CONTRASEÑAS ─────────────────────────────────────────────────
+
+def generar_contrasena(longitud: int = 16, incluir_simbolos: bool = True) -> str:
+    try:
+        import random
+        import string
+        chars = string.ascii_letters + string.digits
+        if incluir_simbolos:
+            chars += "!@#$%^&*()_+-=[]{}|;:,.<>?"
+        contrasena = ''.join(random.choices(chars, k=longitud))
+        # Copiar al portapapeles automáticamente
+        try:
+            import pyperclip
+            pyperclip.copy(contrasena)
+            copiada = " (copiada al portapapeles)"
+        except Exception:
+            copiada = ""
+        return f"🔐 Contraseña generada{copiada}:\n{contrasena}"
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
+# ─── ABRIR URLs ───────────────────────────────────────────────────────────────
+
+def abrir_url(url: str) -> str:
+    try:
+        import webbrowser
+        if not url.startswith("http"):
+            url = "https://" + url
+        webbrowser.open(url)
+        return f"🌐 Abriendo {url}..."
     except Exception as e:
         return f"❌ Error: {str(e)}"

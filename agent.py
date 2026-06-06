@@ -81,15 +81,30 @@ obtener_clima(ciudad), obtener_ip(), obtener_red(), hacer_speedtest(), verificar
         "acciones": "ninguna acción — respondé la pregunta directamente como asistente"
     },
 "utilidades": {
-        "palabras_clave": ["qr", "calcul", "cuanto es", "cuánto es", "porcentaje", "traducir", "traducí", "traduce", "idioma", "inglés", "ingles", "corregir", "corregí", "corrección", "ortografía", "analizar", "analizá", "analiza", "describí", "describe", "imagen", "foto", "qué hay en", "qué dice la imagen", "reproducir", "reproducí", "poné", "poner musica", "escuchar", "música", "musica", "cancion", "canción", "spotify", "youtube"],
-        "acciones": """generar_qr(contenido, nombre?) — genera un QR con el contenido dado
-    calcular(expresion) — calcula expresiones matemáticas
-    calcular_porcentaje(valor, porcentaje) — calcula porcentajes
-    traducir(texto, idioma_destino, idioma_origen?="auto") — traduce texto
-    corregir_texto(texto) — corrige ortografía y gramática
-    analizar_imagen(nombre_imagen, pregunta?="") — SIEMPRE usar cuando el usuario pida analizar, describir o hacer preguntas sobre una imagen
-    reproducir_musica(consulta, plataforma?="youtube", tipo?="musica") — abre YouTube o Spotify. tipo="musica" para canciones, tipo="video" para videos generales    "reproducir_musica": reproducir_musica,"buscar_musica": buscar_musica, """
-    },
+    "palabras_clave": ["qr", "calcul", "cuanto es", "cuánto es", "porcentaje", "traducir", "traducí", "traduce", "idioma", "inglés", "ingles", "corregir", "corregí", "corrección", "ortografía", "analizar", "analizá", "analiza", "describí", "describe", "imagen", "foto", "reproducir", "reproducí", "poné", "pon", "escuchar", "música", "musica", "cancion", "canción", "spotify", "youtube", "video", "famosa", "popular", "contraseña", "contrasena", "password", "url", "abrir pagina", "abrir web", "abrí", "abri", "abre", "abrir"],
+    "acciones": """generar_qr(contenido, nombre?)
+calcular(expresion)
+calcular_porcentaje(valor, porcentaje)
+traducir(texto, idioma_destino, idioma_origen?="auto")
+corregir_texto(texto)
+analizar_imagen(nombre_imagen, pregunta?="")
+generar_contrasena(longitud?=16, incluir_simbolos?=True)
+abrir_url(url) — abre cualquier URL en el navegador
+reproducir_musica(consulta, plataforma, tipo) — REGLAS ESTRICTAS:
+  * tipo="musica" cuando diga "canción", "música", "tema", "algo de", "lo más famoso", "la más famosa"
+  * tipo="video" cuando diga "video", "gameplay", "clip"
+  * plataforma="spotify" cuando no especifique plataforma
+  * plataforma="youtube" cuando diga "youtube"
+  * consulta = texto EXACTO para buscar. Ejemplos:
+    - "Reproduce Come As You Are de Nirvana" → consulta="Come As You Are Nirvana", plataforma="spotify", tipo="musica"
+    - "Reproduce Come As You Are de Nirvana en youtube" → consulta="Come As You Are Nirvana", plataforma="youtube", tipo="musica"
+    - "Reproduce la canción más famosa de Nirvana en youtube" → consulta="Nirvana most popular song", plataforma="youtube", tipo="musica"
+    - "Reproduce la canción más famosa de Nirvana" → consulta="Nirvana most popular song", plataforma="spotify", tipo="musica"
+    - "Reproduce un video de ZarcortGames" → consulta="ZarcortGames", plataforma="youtube", tipo="video"
+    - "Pon algo de Rock" → consulta="Rock", plataforma="spotify", tipo="musica"
+  * NUNCA uses parámetros como "artista", "cancion", "nombre" — SOLO consulta, plataforma y tipo
+buscar_musica(consulta, plataforma) — cuando diga "buscá" en vez de "reproducí/poné" """
+},
     "notas": {
     "palabras_clave": ["nota", "notas", "anotá", "anota", "apuntá", "apunta", "tarea", "tareas", "todo", "pendiente", "completar", "completá", "terminar"],
     "acciones": """agregar_nota(texto), ver_notas(), eliminar_nota(identificador), limpiar_notas()

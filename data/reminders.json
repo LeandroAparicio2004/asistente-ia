@@ -34,5 +34,17 @@
     "mensaje": "Son las 22:51",
     "cuando": "2026-05-14T22:51:26.185319",
     "disparado": true
+  },
+  {
+    "id": 1780881697,
+    "mensaje": "test diagnóstico",
+    "cuando": "2026-06-07T23:21:37.529230",
+    "disparado": true
+  },
+  {
+    "id": 1780882037,
+    "mensaje": "test diagnóstico",
+    "cuando": "2026-06-07T23:27:17.243466",
+    "disparado": true
   }
 ]

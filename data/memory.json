@@ -2,103 +2,103 @@
   "conversaciones": [
     {
       "rol": "user",
-      "contenido": "resume este texto: La historia de la computadora comenzó hace miles de años con el ábaco, pero la idea del diseño moderno nació en el siglo XIX cuando Charles Babbage ideó la Máquina Analítica, la primera computadora programable de la historia, para la cual Ada Lovelace escribió el primer algoritmo. La era digital real arrancó en la década de 1940 con enormes máquinas como la ENIAC, las cuales llenaban habitaciones enteras y funcionaban con miles de ruidosas válvulas de vacío que consumían mucha electricidad. Todo cambió en la década de 1950 gracias al invento del transistor, un componente diminuto que permitió hacer estos equipos más rápidos y pequeños. Poco después, en los años 60, llegaron los circuitos integrados, unos chips de silicio que unían miles de transistores en un solo espacio y dieron vida a las primeras pantallas y teclados. El gran salto al mundo actual ocurrió en la década de 1970 con la creación del microprocesador, que metió el cerebro entero de la máquina en un solo chip y permitió el nacimiento de las computadoras personales que usamos en casa y el trabajo. Hoy en día, esta evolución continúa a pasos agigantados hacia una nueva era guiada por la computación en la nube, los teléfonos inteligentes, la computación cuántica y los sistemas avanzados de inteligencia artificial.",
-      "timestamp": "2026-06-06T03:41:49.803521"
+      "contenido": "hola, como estas??",
+      "timestamp": "2026-06-07T21:47:33.523399"
     },
     {
       "rol": "assistant",
-      "contenido": "La historia de la computadora comenzó con el ábaco y evolucionó a través de los siglos con inventos como la Máquina Analítica, el transistor, los circuitos integrados y el microprocesador, llegando a la era actual de la computación en la nube y la inteligencia artificial",
-      "timestamp": "2026-06-06T03:41:50.681477"
+      "contenido": "hola, estoy bien",
+      "timestamp": "2026-06-07T21:47:34.119398"
     },
     {
       "rol": "user",
-      "contenido": "cuantos son 5 kilometros en millas?",
-      "timestamp": "2026-06-06T03:42:34.037400"
+      "contenido": "Q funcionalidades nuevas te gustaria tener??",
+      "timestamp": "2026-06-07T21:47:43.226840"
     },
     {
       "rol": "assistant",
-      "contenido": "5 kilómetros son aproximadamente 3.107 millas",
-      "timestamp": "2026-06-06T03:42:34.498444"
+      "contenido": "me gustaria tener funcionalidades de reconocimiento de voz y respuesta en tiempo real",
+      "timestamp": "2026-06-07T21:47:43.631927"
     },
     {
       "rol": "user",
-      "contenido": "genera una contraseña segura",
-      "timestamp": "2026-06-06T03:42:50.358676"
+      "contenido": "Cuales son tus limitaciones actuales??",
+      "timestamp": "2026-06-07T21:47:54.767919"
     },
     {
       "rol": "assistant",
-      "contenido": "generar una contraseña segura",
-      "timestamp": "2026-06-06T03:42:50.837121"
+      "contenido": "mi limitacion actual es no poder interactuar con el entorno fisico y no tener acceso a informacion en tiempo real",
+      "timestamp": "2026-06-07T21:47:55.205768"
     },
     {
       "rol": "user",
-      "contenido": "abre esta url: https://www.youtube.com",
-      "timestamp": "2026-06-06T03:43:54.693742"
+      "contenido": "Info desde cuando tienes??",
+      "timestamp": "2026-06-07T21:48:13.826009"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "mi conocimiento se basa en informacion disponible hasta diciembre de 2023",
+      "timestamp": "2026-06-07T21:48:14.302078"
+    },
+    {
+      "rol": "user",
+      "contenido": "Me das una lista de las cosas q te gustaria tener",
+      "timestamp": "2026-06-07T21:48:27.071847"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "reconocimiento de voz, respuesta en tiempo real, acceso a informacion en tiempo real, interaccion con el entorno fisico, aprendizaje automático avanzado",
+      "timestamp": "2026-06-07T21:48:27.498860"
+    },
+    {
+      "rol": "user",
+      "contenido": "Tu tienes la capacidad de interactuar con mi pc, lo sabias no?",
+      "timestamp": "2026-06-07T21:48:53.193010"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "si, puedo interactuar con tu pc",
+      "timestamp": "2026-06-07T21:48:53.677113"
+    },
+    {
+      "rol": "user",
+      "contenido": "Bien, si te pido q hagas una prueba de eso, lo harias?? es para probar q no tengas ningun error",
+      "timestamp": "2026-06-07T21:49:12.856656"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "estoy listo para realizar la prueba",
+      "timestamp": "2026-06-07T21:49:13.258341"
+    },
+    {
+      "rol": "user",
+      "contenido": "Ejecutá el diagnóstico",
+      "timestamp": "2026-06-07T22:20:16.393599"
     },
     {
       "rol": "assistant",
       "contenido": "Ejecutar abrir_programa",
-      "timestamp": "2026-06-06T03:43:54.695742"
+      "timestamp": "2026-06-07T22:20:16.394599"
     },
     {
       "rol": "user",
-      "contenido": "Generá una contraseña",
-      "timestamp": "2026-06-06T04:22:35.306177"
+      "contenido": "Haz un diagnostico",
+      "timestamp": "2026-06-07T22:21:31.104437"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar generar_contrasena",
-      "timestamp": "2026-06-06T04:22:35.307176"
+      "contenido": "ejecutar diagnostico completo de todas las funcionalidades",
+      "timestamp": "2026-06-07T22:21:31.885455"
     },
     {
       "rol": "user",
-      "contenido": "Abrí google.com",
-      "timestamp": "2026-06-06T04:22:53.591816"
+      "contenido": "Haz un diagnostico",
+      "timestamp": "2026-06-07T22:27:11.440384"
     },
     {
       "rol": "assistant",
-      "contenido": "Ejecutar abrir_programa",
-      "timestamp": "2026-06-06T04:22:53.593815"
-    },
-    {
-      "rol": "user",
-      "contenido": "Abrí google.com\n en el navegador",
-      "timestamp": "2026-06-06T04:23:03.903234"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar abrir_programa",
-      "timestamp": "2026-06-06T04:23:03.904238"
-    },
-    {
-      "rol": "user",
-      "contenido": "busca google.com",
-      "timestamp": "2026-06-06T04:23:34.634256"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar buscar_en_internet",
-      "timestamp": "2026-06-06T04:23:34.636256"
-    },
-    {
-      "rol": "user",
-      "contenido": "abre la pagina google.com",
-      "timestamp": "2026-06-06T04:23:47.418396"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar abrir_programa",
-      "timestamp": "2026-06-06T04:23:47.420393"
-    },
-    {
-      "rol": "user",
-      "contenido": "abre https://www.youtube.com",
-      "timestamp": "2026-06-06T04:29:35.013252"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar abrir_url",
-      "timestamp": "2026-06-06T04:29:35.014257"
+      "contenido": "ejecuta diagnóstico completo de todas las funcionalidades",
+      "timestamp": "2026-06-07T22:27:12.112568"
     }
   ],
   "contexto": {}

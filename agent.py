@@ -73,9 +73,10 @@ activar_modo(nombre), ver_modo(nombre), listar_modos(), eliminar_modo(nombre)"""
 obtener_clima(ciudad), obtener_ip(), obtener_red(), hacer_speedtest(), verificar_conexion()"""
     },
     "memoria": {
-        "palabras_clave": ["historial", "memoria", "recordas", "limpiar", "olvidar"],
-        "acciones": """ver_historial(), limpiar_memoria()"""
-    },
+    "palabras_clave": ["historial", "memoria", "recordas", "limpiar", "olvidar", "diagnostico", "diagnóstico", "prueba", "test"],
+    "acciones": """ver_historial(), limpiar_memoria()
+ejecutar_diagnostico() — ejecuta diagnóstico completo de todas las funcionalidades"""
+},
     "general": {
         "palabras_clave": [],
         "acciones": "ninguna acción — respondé la pregunta directamente como asistente"

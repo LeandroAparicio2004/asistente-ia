@@ -16,12 +16,5 @@
       "fecha": "24/05/2026 22:09"
     }
   ],
-  "tareas": [
-    {
-      "id": 1779671356,
-      "texto": "terminar el proyecto",
-      "completada": true,
-      "fecha": "24/05/2026 22:09"
-    }
-  ]
+  "tareas": []
 }

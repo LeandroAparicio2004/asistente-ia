@@ -81,6 +81,8 @@ from actions.programadas import (
     cancelar_programada, iniciar_monitor_programadas
 )
 
+from diagnostico import ejecutar_diagnostico 
+
 # ─── ALIAS — traduce acciones inventadas por la IA a las reales ───────────────
 
 ACCIONES_ALIAS = {
@@ -138,6 +140,9 @@ ACCIONES_ALIAS = {
     "describir imagen": "analizar_imagen",
     "leer imagen": "analizar_imagen",
     "qué hay en": "analizar_imagen",
+    #Diagnostico
+    "diagnostico": "ejecutar_diagnostico",
+    "diagnóstico": "ejecutar_diagnostico",
 }
 
 # ─── MAPA DE ACCIONES ─────────────────────────────────────────────────────────
@@ -275,4 +280,6 @@ ACCIONES = {
     #Accesos
     "generar_contrasena": generar_contrasena,
     "abrir_url": abrir_url,
+    #Diagnostico
+    "ejecutar_diagnostico": ejecutar_diagnostico,
 }

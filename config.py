@@ -6,7 +6,8 @@ load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 SANDBOX_PATH = os.getenv("SANDBOX_PATH")
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
-GEMINI_API_KEY = os.getenv("AIzaSyDOKgh_O3AcdRiA9w8V_wafmQVk9IVe5pM")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 # Validaciones
 if not GROQ_API_KEY:

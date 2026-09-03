@@ -48,8 +48,9 @@ from memory import limpiar_memoria
 
 from actions.utilidades import (
     generar_qr, calcular, calcular_porcentaje,
-    traducir, corregir_texto,
-    analizar_imagen
+    traducir, corregir_texto, analizar_imagen,
+    reproducir_musica, buscar_musica,
+    generar_contrasena, abrir_url
 )
 
 from actions.notas import (
@@ -79,6 +80,8 @@ from actions.programadas import (
     programar_accion, listar_programadas,
     cancelar_programada, iniciar_monitor_programadas
 )
+
+from diagnostico import ejecutar_diagnostico 
 
 # ─── ALIAS — traduce acciones inventadas por la IA a las reales ───────────────
 
@@ -137,6 +140,9 @@ ACCIONES_ALIAS = {
     "describir imagen": "analizar_imagen",
     "leer imagen": "analizar_imagen",
     "qué hay en": "analizar_imagen",
+    #Diagnostico
+    "diagnostico": "ejecutar_diagnostico",
+    "diagnóstico": "ejecutar_diagnostico",
 }
 
 # ─── MAPA DE ACCIONES ─────────────────────────────────────────────────────────
@@ -267,4 +273,13 @@ ACCIONES = {
     "programar_accion": programar_accion,
     "listar_programadas": listar_programadas,
     "cancelar_programada": cancelar_programada,
+    #musica
+    "reproducir_musica": reproducir_musica,
+    "reproducir_musica": reproducir_musica,
+    "buscar_musica": buscar_musica,
+    #Accesos
+    "generar_contrasena": generar_contrasena,
+    "abrir_url": abrir_url,
+    #Diagnostico
+    "ejecutar_diagnostico": ejecutar_diagnostico,
 }

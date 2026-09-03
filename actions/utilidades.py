@@ -186,3 +186,120 @@ def analizar_imagen(nombre_imagen: str, pregunta: str = "") -> str:
 
     except Exception as e:
         return f"❌ Error al analizar imagen: {str(e)}"
+    
+    # ─── MÚSICA ───────────────────────────────────────────────────────────────────
+
+def reproducir_musica(consulta: str = "", plataforma: str = "spotify", tipo: str = "musica", **kwargs) -> str:
+    try:
+        import webbrowser
+        import requests
+        import random
+        from urllib.parse import quote
+        from config import YOUTUBE_API_KEY
+
+        # Si la IA mandó parámetros alternativos, usarlos
+        if not consulta:
+            consulta = kwargs.get("artista") or kwargs.get("cancion") or kwargs.get("nombre") or kwargs.get("query") or ""
+        if not consulta:
+            return "❌ No especificaste qué reproducir."
+
+        plataforma_lower = plataforma.lower().strip()
+        consulta_limpia = consulta.strip().strip('"').strip("'")
+
+        # ─── SPOTIFY ──────────────────────────────────────────────────────────
+        if "spotify" in plataforma_lower:
+            webbrowser.open(f"spotify:search:{consulta_limpia}")
+            return f"🎵 Abriendo '{consulta_limpia}' en Spotify..."
+
+        # ─── YOUTUBE MUSIC (para canciones) ───────────────────────────────────
+        if tipo == "musica":
+            consulta_encoded = quote(consulta_limpia)
+            url = f"https://music.youtube.com/search?q={consulta_encoded}"
+            webbrowser.open(url)
+            return f"🎵 Buscando '{consulta_limpia}' en YouTube Music..."
+
+        # ─── YOUTUBE NORMAL (para videos) ─────────────────────────────────────
+        if tipo == "video":
+            if YOUTUBE_API_KEY:
+                url_api = "https://www.googleapis.com/youtube/v3/search"
+                params = {
+                    "part": "snippet",
+                    "q": f"{consulta_limpia} video",
+                    "type": "video",
+                    "videoCategoryId": "20",
+                    "maxResults": 5,
+                    "key": YOUTUBE_API_KEY
+                }
+                response = requests.get(url_api, params=params, timeout=8)
+                data = response.json()
+                if data.get("items"):
+                    item = random.choice(data["items"])
+                    video_id = item["id"]["videoId"]
+                    webbrowser.open(f"https://www.youtube.com/watch?v={video_id}")
+                    titulo = item["snippet"]["title"]
+                    return f"▶️ Reproduciendo video: '{titulo}'"
+
+            # Fallback
+            webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta_limpia)}")
+            return f"▶️ Buscando video '{consulta_limpia}' en YouTube..."
+
+        # ─── FALLBACK GENÉRICO ────────────────────────────────────────────────
+        webbrowser.open(f"https://www.youtube.com/results?search_query={quote(consulta_limpia)}")
+        return f"🎵 Buscando '{consulta_limpia}' en YouTube..."
+
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+    
+def buscar_musica(consulta: str, plataforma: str = "youtube") -> str:
+    """Busca música abriendo el buscador."""
+    try:
+        import webbrowser
+        from urllib.parse import quote
+
+        consulta_encoded = quote(consulta)
+        plataforma_lower = plataforma.lower().strip()
+
+        if "spotify" in plataforma_lower:
+            url = f"https://open.spotify.com/search/{consulta_encoded}"
+            webbrowser.open(url)
+            return f"🔍 Buscando '{consulta}' en Spotify web..."
+        else:
+            url = f"https://www.youtube.com/results?search_query={consulta_encoded}"
+            webbrowser.open(url)
+            return f"🔍 Buscando '{consulta}' en YouTube..."
+
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+    
+    # ─── GENERADOR DE CONTRASEÑAS ─────────────────────────────────────────────────
+
+def generar_contrasena(longitud: int = 16, incluir_simbolos: bool = True) -> str:
+    try:
+        import random
+        import string
+        chars = string.ascii_letters + string.digits
+        if incluir_simbolos:
+            chars += "!@#$%^&*()_+-=[]{}|;:,.<>?"
+        contrasena = ''.join(random.choices(chars, k=longitud))
+        # Copiar al portapapeles automáticamente
+        try:
+            import pyperclip
+            pyperclip.copy(contrasena)
+            copiada = " (copiada al portapapeles)"
+        except Exception:
+            copiada = ""
+        return f"🔐 Contraseña generada{copiada}:\n{contrasena}"
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
+# ─── ABRIR URLs ───────────────────────────────────────────────────────────────
+
+def abrir_url(url: str) -> str:
+    try:
+        import webbrowser
+        if not url.startswith("http"):
+            url = "https://" + url
+        webbrowser.open(url)
+        return f"🌐 Abriendo {url}..."
+    except Exception as e:
+        return f"❌ Error: {str(e)}"

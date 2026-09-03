@@ -2,103 +2,103 @@
   "conversaciones": [
     {
       "rol": "user",
-      "contenido": "abre Spotify",
-      "timestamp": "2026-05-25T03:42:24.022231"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "abrir aplicacion Spotify",
-      "timestamp": "2026-05-25T03:42:24.432495"
-    },
-    {
-      "rol": "user",
-      "contenido": "Q cancion me recomiendas?",
-      "timestamp": "2026-05-25T03:42:37.885333"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "no tengo suficiente informacion para recomendar una cancion, puedo sugerir algunas opciones populares como Despacito de Luis Fonsi o Vaina Loca de Ozuna",
-      "timestamp": "2026-05-25T03:42:38.480136"
-    },
-    {
-      "rol": "user",
-      "contenido": "Alguna de Linkin Park?",
-      "timestamp": "2026-05-25T03:42:48.467192"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "recomendar cancion de Linkin Park",
-      "timestamp": "2026-05-25T03:42:48.959235"
-    },
-    {
-      "rol": "user",
-      "contenido": "Recomiendame alguna cancion de Linkin Park",
-      "timestamp": "2026-05-25T03:43:03.252191"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "In the End o Numb",
-      "timestamp": "2026-05-25T03:43:03.815205"
-    },
-    {
-      "rol": "user",
-      "contenido": "busca cual es la cancion mas famosa de linkin park",
-      "timestamp": "2026-05-25T03:43:15.023376"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "encontrar cancion mas famosa de Linkin Park",
-      "timestamp": "2026-05-25T03:43:15.466121"
-    },
-    {
-      "rol": "user",
       "contenido": "hola, como estas??",
-      "timestamp": "2026-05-31T15:07:15.893349"
+      "timestamp": "2026-06-07T21:47:33.523399"
     },
     {
       "rol": "assistant",
-      "contenido": "hola, estoy funcionando correctamente",
-      "timestamp": "2026-05-31T15:07:16.832656"
+      "contenido": "hola, estoy bien",
+      "timestamp": "2026-06-07T21:47:34.119398"
     },
     {
       "rol": "user",
-      "contenido": "Algo q reportar?? tienes algun error presente?",
-      "timestamp": "2026-05-31T15:07:30.175834"
+      "contenido": "Q funcionalidades nuevas te gustaria tener??",
+      "timestamp": "2026-06-07T21:47:43.226840"
     },
     {
       "rol": "assistant",
-      "contenido": "no tengo errores presentes",
-      "timestamp": "2026-05-31T15:07:30.586693"
+      "contenido": "me gustaria tener funcionalidades de reconocimiento de voz y respuesta en tiempo real",
+      "timestamp": "2026-06-07T21:47:43.631927"
     },
     {
       "rol": "user",
-      "contenido": "quiero q pruebes todas tus funcionalidades",
-      "timestamp": "2026-05-31T15:07:43.633090"
+      "contenido": "Cuales son tus limitaciones actuales??",
+      "timestamp": "2026-06-07T21:47:54.767919"
     },
     {
       "rol": "assistant",
-      "contenido": "probar todas las funcionalidades del asistente",
-      "timestamp": "2026-05-31T15:07:44.049899"
+      "contenido": "mi limitacion actual es no poder interactuar con el entorno fisico y no tener acceso a informacion en tiempo real",
+      "timestamp": "2026-06-07T21:47:55.205768"
     },
     {
       "rol": "user",
-      "contenido": "hola",
-      "timestamp": "2026-05-31T15:16:41.809448"
+      "contenido": "Info desde cuando tienes??",
+      "timestamp": "2026-06-07T21:48:13.826009"
     },
     {
       "rol": "assistant",
-      "contenido": "hola, estoy aqui para ayudarte",
-      "timestamp": "2026-05-31T15:16:42.427349"
+      "contenido": "mi conocimiento se basa en informacion disponible hasta diciembre de 2023",
+      "timestamp": "2026-06-07T21:48:14.302078"
     },
     {
       "rol": "user",
-      "contenido": "hola",
-      "timestamp": "2026-05-31T15:19:52.826200"
+      "contenido": "Me das una lista de las cosas q te gustaria tener",
+      "timestamp": "2026-06-07T21:48:27.071847"
     },
     {
       "rol": "assistant",
-      "contenido": "hola, estoy aqui para ayudarte",
-      "timestamp": "2026-05-31T15:19:53.329166"
+      "contenido": "reconocimiento de voz, respuesta en tiempo real, acceso a informacion en tiempo real, interaccion con el entorno fisico, aprendizaje automático avanzado",
+      "timestamp": "2026-06-07T21:48:27.498860"
+    },
+    {
+      "rol": "user",
+      "contenido": "Tu tienes la capacidad de interactuar con mi pc, lo sabias no?",
+      "timestamp": "2026-06-07T21:48:53.193010"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "si, puedo interactuar con tu pc",
+      "timestamp": "2026-06-07T21:48:53.677113"
+    },
+    {
+      "rol": "user",
+      "contenido": "Bien, si te pido q hagas una prueba de eso, lo harias?? es para probar q no tengas ningun error",
+      "timestamp": "2026-06-07T21:49:12.856656"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "estoy listo para realizar la prueba",
+      "timestamp": "2026-06-07T21:49:13.258341"
+    },
+    {
+      "rol": "user",
+      "contenido": "Ejecutá el diagnóstico",
+      "timestamp": "2026-06-07T22:20:16.393599"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar abrir_programa",
+      "timestamp": "2026-06-07T22:20:16.394599"
+    },
+    {
+      "rol": "user",
+      "contenido": "Haz un diagnostico",
+      "timestamp": "2026-06-07T22:21:31.104437"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "ejecutar diagnostico completo de todas las funcionalidades",
+      "timestamp": "2026-06-07T22:21:31.885455"
+    },
+    {
+      "rol": "user",
+      "contenido": "Haz un diagnostico",
+      "timestamp": "2026-06-07T22:27:11.440384"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "ejecuta diagnóstico completo de todas las funcionalidades",
+      "timestamp": "2026-06-07T22:27:12.112568"
     }
   ],
   "contexto": {}

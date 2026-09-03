@@ -73,21 +73,38 @@ activar_modo(nombre), ver_modo(nombre), listar_modos(), eliminar_modo(nombre)"""
 obtener_clima(ciudad), obtener_ip(), obtener_red(), hacer_speedtest(), verificar_conexion()"""
     },
     "memoria": {
-        "palabras_clave": ["historial", "memoria", "recordas", "limpiar", "olvidar"],
-        "acciones": """ver_historial(), limpiar_memoria()"""
-    },
+    "palabras_clave": ["historial", "memoria", "recordas", "limpiar", "olvidar", "diagnostico", "diagnóstico", "prueba", "test"],
+    "acciones": """ver_historial(), limpiar_memoria()
+ejecutar_diagnostico() — ejecuta diagnóstico completo de todas las funcionalidades"""
+},
     "general": {
         "palabras_clave": [],
         "acciones": "ninguna acción — respondé la pregunta directamente como asistente"
     },
-    "utilidades": {
-        "palabras_clave": ["qr", "calcul", "cuanto es", "cuánto es", "porcentaje", "traducir", "traducí", "traduce", "idioma", "inglés", "ingles", "corregir", "corregí", "corrección", "ortografía", "analizar", "analizá", "analiza", "describí", "describe", "imagen", "foto", "qué hay en", "qué dice la imagen"],
-        "acciones": """generar_qr(contenido, nombre?) — genera un QR con el contenido dado
-        calcular(expresion) — calcula expresiones matemáticas
-        calcular_porcentaje(valor, porcentaje) — calcula porcentajes
-        traducir(texto, idioma_destino, idioma_origen?="auto") — traduce texto
-        corregir_texto(texto) — corrige ortografía y gramática
-analizar_imagen(nombre_imagen, pregunta?="") — SIEMPRE usar esta acción cuando el usuario pida analizar, describir, ver, leer o hacer preguntas sobre una imagen o foto. Ejemplos: "analizá imagen.png", "qué hay en foto.jpg", "describí captura.png", "qué preguntas tiene preguntas.png" """
+"utilidades": {
+    "palabras_clave": ["qr", "calcul", "cuanto es", "cuánto es", "porcentaje", "traducir", "traducí", "traduce", "idioma", "inglés", "ingles", "corregir", "corregí", "corrección", "ortografía", "analizar", "analizá", "analiza", "describí", "describe", "imagen", "foto", "reproducir", "reproducí", "poné", "pon", "escuchar", "música", "musica", "cancion", "canción", "spotify", "youtube", "video", "famosa", "popular", "contraseña", "contrasena", "password", "url", "abrir pagina", "abrir web", "abrí", "abri", "abre", "abrir"],
+    "acciones": """generar_qr(contenido, nombre?)
+calcular(expresion)
+calcular_porcentaje(valor, porcentaje)
+traducir(texto, idioma_destino, idioma_origen?="auto")
+corregir_texto(texto)
+analizar_imagen(nombre_imagen, pregunta?="")
+generar_contrasena(longitud?=16, incluir_simbolos?=True)
+abrir_url(url) — abre cualquier URL en el navegador
+reproducir_musica(consulta, plataforma, tipo) — REGLAS ESTRICTAS:
+  * tipo="musica" cuando diga "canción", "música", "tema", "algo de", "lo más famoso", "la más famosa"
+  * tipo="video" cuando diga "video", "gameplay", "clip"
+  * plataforma="spotify" cuando no especifique plataforma
+  * plataforma="youtube" cuando diga "youtube"
+  * consulta = texto EXACTO para buscar. Ejemplos:
+    - "Reproduce Come As You Are de Nirvana" → consulta="Come As You Are Nirvana", plataforma="spotify", tipo="musica"
+    - "Reproduce Come As You Are de Nirvana en youtube" → consulta="Come As You Are Nirvana", plataforma="youtube", tipo="musica"
+    - "Reproduce la canción más famosa de Nirvana en youtube" → consulta="Nirvana most popular song", plataforma="youtube", tipo="musica"
+    - "Reproduce la canción más famosa de Nirvana" → consulta="Nirvana most popular song", plataforma="spotify", tipo="musica"
+    - "Reproduce un video de ZarcortGames" → consulta="ZarcortGames", plataforma="youtube", tipo="video"
+    - "Pon algo de Rock" → consulta="Rock", plataforma="spotify", tipo="musica"
+  * NUNCA uses parámetros como "artista", "cancion", "nombre" — SOLO consulta, plataforma y tipo
+buscar_musica(consulta, plataforma) — cuando diga "buscá" en vez de "reproducí/poné" """
 },
     "notas": {
     "palabras_clave": ["nota", "notas", "anotá", "anota", "apuntá", "apunta", "tarea", "tareas", "todo", "pendiente", "completar", "completá", "terminar"],
@@ -206,6 +223,17 @@ _modelo_actual = None
 
 def interpretar(mensaje_usuario: str) -> dict:
     global _modelo_actual
+
+    # ─── PRE-PARSER: intentar resolver sin IA ────────────────────────────────
+    from pre_parser import pre_parsear
+    resultado_rapido = pre_parsear(mensaje_usuario)
+    if resultado_rapido:
+        print(f"   ⚡ Pre-parser → {resultado_rapido['accion']}")
+        agregar_mensaje("user", mensaje_usuario)
+        agregar_mensaje("assistant", resultado_rapido.get("descripcion", ""))
+        return resultado_rapido
+
+    # ─── IA normal si el pre-parser no pudo ──────────────────────────────────
     agregar_mensaje("user", mensaje_usuario)
     historial = obtener_historial_chat()
     system_prompt = _construir_prompt(mensaje_usuario)

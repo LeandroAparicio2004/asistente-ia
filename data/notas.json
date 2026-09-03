@@ -1,0 +1,27 @@
+{
+  "notas": [
+    {
+      "id": 1779671311,
+      "texto": "comprar leche",
+      "fecha": "24/05/2026 22:08"
+    },
+    {
+      "id": 1779671318,
+      "texto": "llamar al medico",
+      "fecha": "24/05/2026 22:08"
+    },
+    {
+      "id": 1779671344,
+      "texto": "comprar leche",
+      "fecha": "24/05/2026 22:09"
+    }
+  ],
+  "tareas": [
+    {
+      "id": 1779671356,
+      "texto": "terminar el proyecto",
+      "completada": true,
+      "fecha": "24/05/2026 22:09"
+    }
+  ]
+}

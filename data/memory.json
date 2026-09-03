@@ -1,0 +1,105 @@
+{
+  "conversaciones": [
+    {
+      "rol": "user",
+      "contenido": "abre Spotify",
+      "timestamp": "2026-05-25T03:42:24.022231"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "abrir aplicacion Spotify",
+      "timestamp": "2026-05-25T03:42:24.432495"
+    },
+    {
+      "rol": "user",
+      "contenido": "Q cancion me recomiendas?",
+      "timestamp": "2026-05-25T03:42:37.885333"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "no tengo suficiente informacion para recomendar una cancion, puedo sugerir algunas opciones populares como Despacito de Luis Fonsi o Vaina Loca de Ozuna",
+      "timestamp": "2026-05-25T03:42:38.480136"
+    },
+    {
+      "rol": "user",
+      "contenido": "Alguna de Linkin Park?",
+      "timestamp": "2026-05-25T03:42:48.467192"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "recomendar cancion de Linkin Park",
+      "timestamp": "2026-05-25T03:42:48.959235"
+    },
+    {
+      "rol": "user",
+      "contenido": "Recomiendame alguna cancion de Linkin Park",
+      "timestamp": "2026-05-25T03:43:03.252191"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "In the End o Numb",
+      "timestamp": "2026-05-25T03:43:03.815205"
+    },
+    {
+      "rol": "user",
+      "contenido": "busca cual es la cancion mas famosa de linkin park",
+      "timestamp": "2026-05-25T03:43:15.023376"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "encontrar cancion mas famosa de Linkin Park",
+      "timestamp": "2026-05-25T03:43:15.466121"
+    },
+    {
+      "rol": "user",
+      "contenido": "hola, como estas??",
+      "timestamp": "2026-05-31T15:07:15.893349"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "hola, estoy funcionando correctamente",
+      "timestamp": "2026-05-31T15:07:16.832656"
+    },
+    {
+      "rol": "user",
+      "contenido": "Algo q reportar?? tienes algun error presente?",
+      "timestamp": "2026-05-31T15:07:30.175834"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "no tengo errores presentes",
+      "timestamp": "2026-05-31T15:07:30.586693"
+    },
+    {
+      "rol": "user",
+      "contenido": "quiero q pruebes todas tus funcionalidades",
+      "timestamp": "2026-05-31T15:07:43.633090"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "probar todas las funcionalidades del asistente",
+      "timestamp": "2026-05-31T15:07:44.049899"
+    },
+    {
+      "rol": "user",
+      "contenido": "hola",
+      "timestamp": "2026-05-31T15:16:41.809448"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "hola, estoy aqui para ayudarte",
+      "timestamp": "2026-05-31T15:16:42.427349"
+    },
+    {
+      "rol": "user",
+      "contenido": "hola",
+      "timestamp": "2026-05-31T15:19:52.826200"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "hola, estoy aqui para ayudarte",
+      "timestamp": "2026-05-31T15:19:53.329166"
+    }
+  ],
+  "contexto": {}
+}

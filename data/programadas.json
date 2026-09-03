@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1779688498,
+    "accion": "abrir_programa",
+    "parametros": {
+      "nombre": "notepad"
+    },
+    "cuando": "2026-05-25T02:55:58.928709",
+    "descripcion": "Abrir bloc de notas en 1 minuto",
+    "ejecutada": true
+  }
+]

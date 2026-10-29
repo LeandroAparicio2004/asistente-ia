@@ -1,16 +1,27 @@
 import speech_recognition as sr
 import pyttsx3
 
-# Inicializar motor de voz
-engine = pyttsx3.init()
-engine.setProperty("rate", 160)
-engine.setProperty("volume", 1.0)
+import threading
+
+_lock_voz = threading.Lock()
 
 def hablar(texto: str):
-    """El asistente habla en voz alta."""
+    """El asistente habla en voz alta (funciona también desde otros hilos)."""
     print(f"🤖 Asistente: {texto}")
-    engine.say(texto)
-    engine.runAndWait()
+    with _lock_voz:
+        try:
+            try:
+                import pythoncom
+                pythoncom.CoInitialize()   # necesario para usar la voz fuera del hilo principal
+            except Exception:
+                pass
+            motor = pyttsx3.init()
+            motor.setProperty("rate", 160)
+            motor.setProperty("volume", 1.0)
+            motor.say(texto)
+            motor.runAndWait()
+        except Exception as e:
+            print(f"⚠️ No pude hablar: {e}")
 
 def escuchar() -> str:
     """Escucha por el micrófono y devuelve texto."""

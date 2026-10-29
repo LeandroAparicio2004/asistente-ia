@@ -1,104 +1,104 @@
 {
   "conversaciones": [
     {
-      "rol": "user",
-      "contenido": "hola, como estas??",
-      "timestamp": "2026-06-07T21:47:33.523399"
-    },
-    {
       "rol": "assistant",
-      "contenido": "hola, estoy bien",
-      "timestamp": "2026-06-07T21:47:34.119398"
+      "contenido": "Ejecutar ver_notas",
+      "timestamp": "2026-10-29T16:56:52.026097"
     },
     {
       "rol": "user",
-      "contenido": "Q funcionalidades nuevas te gustaria tener??",
-      "timestamp": "2026-06-07T21:47:43.226840"
+      "contenido": "mis tareas",
+      "timestamp": "2026-10-29T16:56:57.183794"
     },
     {
       "rol": "assistant",
-      "contenido": "me gustaria tener funcionalidades de reconocimiento de voz y respuesta en tiempo real",
-      "timestamp": "2026-06-07T21:47:43.631927"
+      "contenido": "Ejecutar ver_tareas",
+      "timestamp": "2026-10-29T16:56:57.192118"
     },
     {
       "rol": "user",
-      "contenido": "Cuales son tus limitaciones actuales??",
-      "timestamp": "2026-06-07T21:47:54.767919"
+      "contenido": "mi agenda",
+      "timestamp": "2026-10-29T16:57:02.057255"
     },
     {
       "rol": "assistant",
-      "contenido": "mi limitacion actual es no poder interactuar con el entorno fisico y no tener acceso a informacion en tiempo real",
-      "timestamp": "2026-06-07T21:47:55.205768"
+      "contenido": "Ejecutar ver_todos_eventos",
+      "timestamp": "2026-10-29T16:57:02.065978"
     },
     {
       "rol": "user",
-      "contenido": "Info desde cuando tienes??",
-      "timestamp": "2026-06-07T21:48:13.826009"
+      "contenido": "listar modos",
+      "timestamp": "2026-10-29T16:57:12.472608"
     },
     {
       "rol": "assistant",
-      "contenido": "mi conocimiento se basa en informacion disponible hasta diciembre de 2023",
-      "timestamp": "2026-06-07T21:48:14.302078"
+      "contenido": "Ejecutar listar_modos",
+      "timestamp": "2026-10-29T16:57:12.480945"
     },
     {
       "rol": "user",
-      "contenido": "Me das una lista de las cosas q te gustaria tener",
-      "timestamp": "2026-06-07T21:48:27.071847"
+      "contenido": "qué programas tengo abiertos",
+      "timestamp": "2026-10-29T16:57:19.361445"
     },
     {
       "rol": "assistant",
-      "contenido": "reconocimiento de voz, respuesta en tiempo real, acceso a informacion en tiempo real, interaccion con el entorno fisico, aprendizaje automático avanzado",
-      "timestamp": "2026-06-07T21:48:27.498860"
+      "contenido": "Ejecutar listar_procesos_activos",
+      "timestamp": "2026-10-29T16:57:19.370333"
     },
     {
       "rol": "user",
-      "contenido": "Tu tienes la capacidad de interactuar con mi pc, lo sabias no?",
-      "timestamp": "2026-06-07T21:48:53.193010"
+      "contenido": "sub el vrillo",
+      "timestamp": "2026-10-29T17:07:07.018840"
     },
     {
       "rol": "assistant",
-      "contenido": "si, puedo interactuar con tu pc",
-      "timestamp": "2026-06-07T21:48:53.677113"
+      "contenido": "Ejecutar subir_brillo",
+      "timestamp": "2026-10-29T17:07:07.026157"
     },
     {
       "rol": "user",
-      "contenido": "Bien, si te pido q hagas una prueba de eso, lo harias?? es para probar q no tengas ningun error",
-      "timestamp": "2026-06-07T21:49:12.856656"
+      "contenido": "cuanta ram tengo??",
+      "timestamp": "2026-10-29T17:07:23.403135"
     },
     {
       "rol": "assistant",
-      "contenido": "estoy listo para realizar la prueba",
-      "timestamp": "2026-06-07T21:49:13.258341"
+      "contenido": "Ejecutar obtener_ram",
+      "timestamp": "2026-10-29T17:07:23.411246"
     },
     {
       "rol": "user",
-      "contenido": "Ejecutá el diagnóstico",
-      "timestamp": "2026-06-07T22:20:16.393599"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar abrir_programa",
-      "timestamp": "2026-06-07T22:20:16.394599"
+      "contenido": "Como estan los discos?",
+      "timestamp": "2026-10-29T17:07:47.867196"
     },
     {
       "rol": "user",
-      "contenido": "Haz un diagnostico",
-      "timestamp": "2026-06-07T22:21:31.104437"
+      "contenido": "Cuanto espacio tengo?",
+      "timestamp": "2026-10-29T17:07:58.527723"
     },
     {
       "rol": "assistant",
-      "contenido": "ejecutar diagnostico completo de todas las funcionalidades",
-      "timestamp": "2026-06-07T22:21:31.885455"
+      "contenido": "Ejecutar obtener_disco",
+      "timestamp": "2026-10-29T17:07:58.535525"
     },
     {
       "rol": "user",
-      "contenido": "Haz un diagnostico",
-      "timestamp": "2026-06-07T22:27:11.440384"
+      "contenido": "Como esta el dia?",
+      "timestamp": "2026-10-29T17:08:32.327397"
     },
     {
       "rol": "assistant",
-      "contenido": "ejecuta diagnóstico completo de todas las funcionalidades",
-      "timestamp": "2026-06-07T22:27:12.112568"
+      "contenido": "Ejecutar obtener_disco",
+      "timestamp": "2026-10-29T17:08:32.336439"
+    },
+    {
+      "rol": "user",
+      "contenido": "como esta el dia?",
+      "timestamp": "2026-10-29T17:08:37.364821"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar obtener_disco",
+      "timestamp": "2026-10-29T17:08:37.372214"
     }
   ],
   "contexto": {}

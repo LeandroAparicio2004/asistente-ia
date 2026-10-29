@@ -46,5 +46,23 @@
     "mensaje": "test diagnóstico",
     "cuando": "2026-06-07T23:27:17.243466",
     "disparado": true
+  },
+  {
+    "id": 1793302529,
+    "mensaje": "test diagnóstico",
+    "cuando": "2026-10-29T17:35:29.729473",
+    "disparado": true
+  },
+  {
+    "id": 1793302631,
+    "mensaje": "test diagnóstico",
+    "cuando": "2026-10-29T17:37:11.767744",
+    "disparado": true
+  },
+  {
+    "id": 1793303804,
+    "mensaje": "Son las 16:57",
+    "cuando": "2026-10-29T16:57:44.841291",
+    "disparado": true
   }
 ]

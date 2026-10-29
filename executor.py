@@ -283,3 +283,10 @@ ACCIONES = {
     #Diagnostico
     "ejecutar_diagnostico": ejecutar_diagnostico,
 }
+
+# Solo estas acciones piden confirmación. Para ninguna: ACCIONES_CON_CONFIRMACION = set()
+ACCIONES_CON_CONFIRMACION = {
+    "apagar_pc", "reiniciar_pc",
+    "eliminar_archivo", "eliminar_carpeta", "borrar_linea",
+    "limpiar_memoria",
+}

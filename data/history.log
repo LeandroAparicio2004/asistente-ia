@@ -1154,3 +1154,149 @@ Qué tengo en el portapapeles?
 [2026-05-25 03:40:35] ACCION: generar_qr | PARAMS: contenido=https://youtu.be/SMuwlU62f34?si=cwtY-B6SQXfhhshV | RESULTADO: ✅ QR generado como 'qr_20260525_034035.png' en el sandbox.
    Contenido: https://youtu.be/SMuwlU62f34?si=cwtY-B6SQXfhhshV
 [2026-05-25 03:42:27] ACCION: abrir_programa | PARAMS: nombre=Spotify | RESULTADO: ✅ Abriendo 'Spotify'...
+[2026-10-29 16:18:04] ACCION: abrir_programa | PARAMS: nombre=calculadora} | RESULTADO: ✅ Intentando abrir 'calculadora}'...
+[2026-10-29 16:40:16] ACCION: bajar_brillo | PARAMS:  | RESULTADO: 💡 Brillo bajado a 90%
+[2026-10-29 16:40:46] ACCION: ajustar_brillo | PARAMS: nivel=10 | RESULTADO: 💡 Brillo ajustado a 10%
+[2026-10-29 16:40:54] ACCION: ajustar_brillo | PARAMS: nivel=100 | RESULTADO: 💡 Brillo ajustado a 100%
+[2026-10-29 16:41:09] ACCION: abrir_programa | PARAMS: nombre=calculadora | RESULTADO: ✅ Intentando abrir 'calculadora'...
+[2026-10-29 16:46:12] ACCION: abrir_programa | PARAMS: nombre=calculadora | RESULTADO: ✅ Abriendo 'calculadora'...
+[2026-10-29 16:46:21] ACCION: abrir_programa | PARAMS: nombre=block de notas | RESULTADO: ❌ No encontré 'block de notas'. Probá 'actualizar cache de apps'.
+[2026-10-29 16:46:29] ACCION: abrir_programa | PARAMS: nombre=spotify | RESULTADO: ✅ Abriendo 'spotify'...
+[2026-10-29 16:46:43] ACCION: ajustar_brillo | PARAMS: nivel=80 | RESULTADO: 💡 Brillo ajustado a 80%
+[2026-10-29 16:46:52] ACCION: ajustar_brillo | PARAMS: nivel=100 | RESULTADO: 💡 Brillo ajustado a 100%
+[2026-10-29 16:47:10] ACCION: ajustar_volumen | PARAMS: nivel=100 | RESULTADO: 🔊 Volumen ajustado a 100%
+[2026-10-29 16:47:27] ACCION: ajustar_volumen | PARAMS: nivel=0 | RESULTADO: 🔊 Volumen ajustado a 0%
+[2026-10-29 16:47:36] ACCION: ajustar_volumen | PARAMS: nivel=30 | RESULTADO: 🔊 Volumen ajustado a 30%
+[2026-10-29 16:47:39] ACCION: silenciar | PARAMS:  | RESULTADO: 🔇 PC silenciada.
+[2026-10-29 16:47:46] ACCION: abrir_programa | PARAMS: nombre=calculadora | RESULTADO: ✅ Abriendo 'calculadora'...
+[2026-10-29 16:47:52] ACCION: cerrar_programa | PARAMS: nombre=calculadora | RESULTADO: ❌ No encontré 'calculadora' en ejecución.
+[2026-10-29 16:52:00] ACCION: abrir_programa | PARAMS: nombre=block de notas | RESULTADO: ✅ Abriendo 'block de notas'...
+[2026-10-29 16:52:08] ACCION: abrir_programa | PARAMS: nombre=block de notas | RESULTADO: ✅ Abriendo 'block de notas'...
+[2026-10-29 16:52:16] ACCION: cerrar_programa | PARAMS: nombre=block de notas | RESULTADO: ✅ Cerrado: notepad.exe (PID 14144)
+[2026-10-29 16:52:37] ACCION: ajustar_volumen | PARAMS: nivel=0 | RESULTADO: 🔊 Volumen ajustado a 0%
+[2026-10-29 16:54:32] ACCION: crear_carpeta | PARAMS: nombre=pruebas | RESULTADO: ✅ Carpeta 'pruebas' creada.
+[2026-10-29 16:55:07] ACCION: crear_carpeta | PARAMS: nombre=pruebas | RESULTADO: ✅ Carpeta 'pruebas' creada.
+[2026-10-29 16:55:19] ACCION: crear_archivo | PARAMS: nombre=pruebas/hola.txt | RESULTADO: ✅ Archivo 'pruebas/hola.txt' creado.
+[2026-10-29 16:55:29] ACCION: listar_contenido | PARAMS:  | RESULTADO: 📂 Contenido de 'sandbox':
+  📁 pruebas
+
+[2026-10-29 16:55:35] ACCION: captura_pantalla | PARAMS:  | RESULTADO: 📸 Captura guardada como 'captura_20261029_165535.png'.
+[2026-10-29 16:55:40] ACCION: generar_qr | PARAMS: contenido=https://google.com | RESULTADO: ✅ QR generado como 'qr_20261029_165540.png' en el sandbox.
+   Contenido: https://google.com
+[2026-10-29 16:55:44] ACCION: generar_contrasena | PARAMS: longitud=20 | RESULTADO: 🔐 Contraseña generada (copiada al portapapeles):
+=@Y}+MYTI1)Md$4Rc%[2
+[2026-10-29 16:55:50] ACCION: calcular | PARAMS: expresion=2+2*5 | RESULTADO: 🧮 2+2*5 = 12
+[2026-10-29 16:55:54] ACCION: traducir | PARAMS: texto=hola mundo, idioma_destino=inglés | RESULTADO: ❌ Error al traducir: No module named 'deep_translator'
+[2026-10-29 16:56:00] ACCION: obtener_clima | PARAMS: ciudad=rosario | RESULTADO: 🌤️ Clima en Rosario, AR:
+  • Estado: Tormenta
+  • Temperatura: 18.65°C (sensación 18.56°C)
+  • Mín/Máx: 18.32°C / 19.95°C
+  • Humedad: 76%
+  • Viento: 4.63 m/s
+[2026-10-29 16:56:05] ACCION: buscar_en_internet | PARAMS: consulta=historia de argentina | RESULTADO: 🌐 Historia de la Argentina:
+
+La historia de la Argentina es la cronología de sucesos desde el comienzo del primigenio poblamiento humano en el actual territorio de la República Argentina hasta nuestra propia actualidad.
+[2026-10-29 16:56:10] ACCION: abrir_url | PARAMS: url=youtube.com | RESULTADO: 🌐 Abriendo https://youtube.com...
+[2026-10-29 16:56:17] ACCION: reproducir_musica | PARAMS: consulta=come as you are nirvana, plataforma=youtube, tipo=musica | RESULTADO: 🎵 Buscando 'come as you are nirvana' en YouTube Music...
+[2026-10-29 16:56:26] ACCION: iniciar_pomodoro | PARAMS:  | RESULTADO: 🍅 Pomodoro iniciado: 4 ciclos de 25min trabajo / 5min descanso.
+   Sonará un beep cuando cambie cada etapa.
+[2026-10-29 16:56:34] ACCION: estado_pomodoro | PARAMS:  | RESULTADO: 🍅 Hay un Pomodoro en curso.
+[2026-10-29 16:56:39] ACCION: cancelar_pomodoro | PARAMS:  | RESULTADO: ✅ Pomodoro cancelado.
+[2026-10-29 16:56:44] ACCION: agregar_recordatorio | PARAMS: mensaje=, cuando=en 1 minutos | RESULTADO: ⏰ Recordatorio guardado para el 29/10/2026 a las 16:57: 'Son las 16:57'
+[2026-10-29 16:56:52] ACCION: ver_notas | PARAMS:  | RESULTADO: 📝 Tus notas (3):
+  [24/05/2026 22:08] comprar leche
+  [24/05/2026 22:08] llamar al medico
+  [24/05/2026 22:09] comprar leche
+[2026-10-29 16:56:57] ACCION: ver_tareas | PARAMS:  | RESULTADO: 📋 No tenés tareas pendientes.
+[2026-10-29 16:57:02] ACCION: ver_todos_eventos | PARAMS:  | RESULTADO: 📅 No tenés eventos futuros.
+[2026-10-29 16:57:12] ACCION: listar_modos | PARAMS:  | RESULTADO: 📋 Modos disponibles (1):
+  🎮 Trabajo: spotify, Word
+[2026-10-29 16:57:20] ACCION: listar_procesos_activos | PARAMS:  | RESULTADO: 📋 Procesos activos:
+  • AMDRSServ.exe
+  • AMDRSSrcExt.exe
+  • AdobeCollabSync.exe
+  • ApplicationFrameHost.exe
+  • AutoModeDetect.exe
+  • CPUMetricsServer.exe
+  • Code.exe
+  • CompPkgSrv.exe
+  • DataExchangeHost.exe
+  • DefenderAiPlatformHost.exe
+  • DefenderSessionHelper.exe
+  • EOSOverlayRenderer-Win64-Shipping.exe
+  • EpicGamesLauncher.exe
+  • EpicOnlineServicesUserHelper.exe
+  • EpicWebHelper.exe
+  • FnHotkeyCapsLKNumLK.exe
+  • FnHotkeyUtility.exe
+  • GameInputRedistService.exe
+  • GameInputSvc.exe
+  • LNBITSSvc.exe
+  • LSB.exe
+  • LenovoUtilityService.exe
+  • LenovoVantage-(GenericMessagingAddin).exe
+  • LenovoVantage-(VantageCoreAddin).exe
+  • LenovoVantageService.exe
+  • Locator.exe
+  • LockApp.exe
+  • MoUsoCoreWorker.exe
+  • MpDefenderCoreService.exe
+  • NisSrv.exe
+  • OfficeClickToRun.exe
+  • OneDrive.Sync.Service.exe
+  • OneDrive.exe
+  • OpenConsole.exe
+  • RadeonSoftware.exe
+  • Registry
+  • RtkBtManServ.exe
+  • RuntimeBroker.exe
+  • SDXHelper.exe
+  • SearchApp.exe
+  • SecurityHealthSystray.exe
+  • ShellExperienceHost.exe
+  • StartMenuExperienceHost.exe
+  • System Idle Process
+  • TCPSVCS.EXE
+  • TextInputHost.exe
+  • UserOOBEBroker.exe
+  • WhatsApp.Root.exe
+  • WmiApSrv.exe
+  • WmiPrvSE.exe
+  • amdfendrsr.exe
+  • armsvc.exe
+  • atieclxx.exe
+  • atiesrxx.exe
+  • backgroundTaskHost.exe
+  • cmd.exe
+  • cncmd.exe
+  • copilot-runtime.exe
+  • ctfmon.exe
+  • dasHost.exe
+  • dllhost.exe
+  • gamingservices.exe
+  • gamingservicesnet.exe
+  • httpd.exe
+  • msedgewebview2.exe
+  • opera.exe
+  • opera_crashreporter.exe
+  • pet.exe
+  • pg_ctl.exe
+  • postgres.exe
+  • powershell.exe
+  • printfilterpipelinesvc.exe
+  • rundll32.exe
+  • sihost.exe
+  • steam.exe
+  • steamservice.exe
+  • steamwebhelper.exe
+  • taskhostw.exe
+  • uhssvc.exe
+  • unsecapp.exe
+[2026-10-29 17:07:07] ACCION: subir_brillo | PARAMS:  | RESULTADO: 💡 Brillo subido a 100%
+[2026-10-29 17:07:23] ACCION: obtener_ram | PARAMS:  | RESULTADO: 🧠 RAM: 8.7GB usados / 1.2GB libres / 9.8GB total (88.1%)
+[2026-10-29 17:07:58] ACCION: obtener_disco | PARAMS:  | RESULTADO: 💾 Discos:
+  C:\: 208.9GB usados / 29.0GB libres / 237.9GB total (87.8%)
+[2026-10-29 17:08:32] ACCION: obtener_disco | PARAMS:  | RESULTADO: 💾 Discos:
+  C:\: 208.9GB usados / 29.0GB libres / 237.9GB total (87.8%)
+[2026-10-29 17:08:37] ACCION: obtener_disco | PARAMS:  | RESULTADO: 💾 Discos:
+  C:\: 208.9GB usados / 29.0GB libres / 237.9GB total (87.8%)

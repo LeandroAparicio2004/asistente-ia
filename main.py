@@ -1,5 +1,5 @@
 from agent import interpretar
-from executor import ACCIONES, ACCIONES_ALIAS
+from executor import ACCIONES, ACCIONES_ALIAS, ACCIONES_CON_CONFIRMACION
 from actions.sistema import cancelar_bloqueo
 from voice import hablar, escuchar
 from history import registrar, ver_historial
@@ -45,7 +45,7 @@ def procesar(mensaje: str):
         hablar(f"No conozco esa acción: {accion}")
         return
 
-    if confirmar_accion(descripcion):
+    if accion not in ACCIONES_CON_CONFIRMACION or confirmar_accion(descripcion):
         funcion = ACCIONES[accion]
         try:
             resultado_ejecucion = funcion(**parametros)

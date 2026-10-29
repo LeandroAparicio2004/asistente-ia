@@ -2,6 +2,7 @@ import os
 import glob
 import winreg
 import subprocess
+import shutil
 
 # ─── CACHE ────────────────────────────────────────────────────────────────────
 
@@ -112,8 +113,32 @@ def forzar_regenerar() -> str:
 
 # ─── ABRIR PROGRAMAS ──────────────────────────────────────────────────────────
 
+# Apps nativas de Windows que no están en el cache (nombre → comando)
+APPS_WINDOWS = {
+    "calculadora": "calc.exe",
+    "calc": "calc.exe",
+    "bloc de notas": "notepad.exe",
+    "block de notas": "notepad.exe",
+    "notepad": "notepad.exe",
+    "paint": "mspaint.exe",
+    "explorador": "explorer.exe",
+    "explorador de archivos": "explorer.exe",
+    "administrador de tareas": "taskmgr.exe",
+    "cmd": "cmd.exe",
+    "powershell": "powershell.exe",
+    "configuracion": "ms-settings:",
+    "configuración": "ms-settings:",
+    "panel de control": "control.exe",
+    "recortes": "snippingtool.exe",
+}
+
 def abrir_programa(nombre: str) -> str:
     nombre_lower = nombre.lower().strip().replace(".exe", "")
+
+    if nombre_lower in APPS_WINDOWS:
+        os.startfile(APPS_WINDOWS[nombre_lower])
+        return f"✅ Abriendo '{nombre}'..."
+
     cache = obtener_cache()
 
     if nombre_lower in cache:
@@ -128,11 +153,27 @@ def abrir_programa(nombre: str) -> str:
                 subprocess.Popen([exe], shell=False)
                 return f"✅ Abriendo '{clave}'..."
 
+    # Tolerancia a errores de tipeo ("calculadroa", "spotfy")
     try:
-        subprocess.Popen(nombre, shell=True)
-        return f"✅ Intentando abrir '{nombre}'..."
-    except Exception:
-        return f"❌ No encontré '{nombre}'. Probá 'actualizar cache de apps'."
+        from rapidfuzz import process, fuzz
+        m = process.extractOne(nombre_lower, list(APPS_WINDOWS) + list(cache),
+                               scorer=fuzz.ratio, score_cutoff=80)
+        if m:
+            clave = m[0]
+            if clave in APPS_WINDOWS:
+                os.startfile(APPS_WINDOWS[clave])
+                return f"✅ Abriendo '{clave}'..."
+            if os.path.exists(cache[clave]):
+                subprocess.Popen([cache[clave]], shell=False)
+                return f"✅ Abriendo '{clave}'..."
+    except ImportError:
+        pass
+
+    ruta = shutil.which(nombre)
+    if ruta:
+        subprocess.Popen([ruta], shell=False)
+        return f"✅ Abriendo '{nombre}'..."
+    return f"❌ No encontré '{nombre}'. Probá 'actualizar cache de apps'."
 
 def listar_programas_instalados() -> str:
     cache = obtener_cache()
@@ -163,6 +204,18 @@ PROCESOS_BLOQUEADOS = {
 def es_proceso_bloqueado(nombre_proceso: str) -> bool:
     return nombre_proceso.lower().strip() in PROCESOS_BLOQUEADOS
 
+# Nombre del proceso real de apps nativas (nombre → posibles procesos)
+PROCESOS_ALIAS = {
+    "calculadora": ["calculatorapp", "calculator", "win32calc", "calc"],
+    "calc": ["calculatorapp", "calculator", "win32calc", "calc"],
+    "bloc de notas": ["notepad"],
+    "block de notas": ["notepad"],
+    "paint": ["mspaint"],
+    "cmd": ["cmd"],
+    "powershell": ["powershell", "pwsh"],
+    "recortes": ["snippingtool", "screenclippinghost"],
+}
+
 def cerrar_programa(nombre: str) -> str:
     nombre_lower = nombre.lower().strip().replace(".exe", "")
     nombre_exe = nombre_lower + ".exe"
@@ -170,6 +223,7 @@ def cerrar_programa(nombre: str) -> str:
     if es_proceso_bloqueado(nombre_exe):
         return f"🚫 No puedo cerrar '{nombre}' porque es un proceso protegido."
 
+    nombres_buscados = {nombre_lower, *PROCESOS_ALIAS.get(nombre_lower, [])}
     cerrados = []
     no_encontrados = True
 
@@ -177,7 +231,7 @@ def cerrar_programa(nombre: str) -> str:
         try:
             proc_nombre = proc.info["name"].lower()
             proc_sin_ext = proc_nombre.replace(".exe", "")
-            if proc_sin_ext == nombre_lower or proc_nombre == nombre_exe:
+            if proc_sin_ext in nombres_buscados or proc_nombre == nombre_exe:
                 no_encontrados = False
                 if es_proceso_bloqueado(proc_nombre):
                     return f"🚫 '{nombre}' está protegido y no puede cerrarse."

@@ -7,7 +7,7 @@ import shutil
 from datetime import datetime
 
 from agent import interpretar
-from executor import ACCIONES, ACCIONES_ALIAS
+from executor import ACCIONES, ACCIONES_ALIAS, ACCIONES_CON_CONFIRMACION
 from voice import hablar, escuchar
 from history import registrar, ver_historial
 from memory import limpiar_memoria
@@ -597,11 +597,13 @@ class AsistenteApp(tk.Tk):
                     ))
                     self.after(0, lambda: self._set_status("Listo"))
                     self.after(0, self._fin)
-                else:
+                elif accion_real in ACCIONES_CON_CONFIRMACION:
                     self.after(0, lambda: self._confirmar(
                         descripcion,
                         lambda: self._exec(accion_real, parametros)
                     ))
+                else:
+                    self.after(0, lambda: self._exec(accion_real, parametros))
 
         except Exception as e:
             self.after(0, lambda: self._agregar_mensaje(f"Error: {str(e)}", "error"))

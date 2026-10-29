@@ -1,5 +1,10 @@
 import re
 
+try:
+    from rapidfuzz import fuzz, process
+except ImportError:  # sin rapidfuzz todo sigue andando, solo que sin tolerancia a errores
+    fuzz = process = None
+
 # ─── COMANDOS DIRECTOS ────────────────────────────────────────────────────────
 # Mapeo exacto: frase → acción + parámetros
 # Sin IA, sin red, respuesta instantánea
@@ -225,12 +230,26 @@ PATRONES = [
     (r"(?:poné|pon|poner|ajustar|ajustá)\s+(?:el\s+)?brillo\s+(?:al?\s+)?(\d+)%?",
      "ajustar_brillo", lambda m: {"nivel": int(m.group(1))}),
 
+    # "subí el brillo al 100%", "bajá el volumen a 20", "poné el brillo en 50"
+    (r"(?:subí|subi|sube|subir|bajá|baja|bajar|poné|pone|pon|poner|ajustar|ajustá|ajusta)\s+(?:el\s+)?brillo\s+(?:al?|en|hasta)\s+(?:el\s+)?(\d+)\s*%?$",
+     "ajustar_brillo", lambda m: {"nivel": min(100, int(m.group(1)))}),
+    (r"(?:subí|subi|sube|subir|bajá|baja|bajar|poné|pone|pon|poner|ajustar|ajustá|ajusta)\s+(?:el\s+)?volumen\s+(?:al?|en|hasta)\s+(?:el\s+)?(\d+)\s*%?$",
+     "ajustar_volumen", lambda m: {"nivel": min(100, int(m.group(1)))}),
+
+    # "brillo / volumen al máximo"
+    (r"(?:poné|pone|pon|poner|subí|subi|sube|subir)\s+(?:el\s+)?brillo\s+(?:al\s+)?(?:máximo|maximo)$",
+     "ajustar_brillo", lambda m: {"nivel": 100}),
+    (r"(?:poné|pone|pon|poner|bajá|baja|bajar)\s+(?:el\s+)?brillo\s+(?:al\s+)?(?:mínimo|minimo)$",
+     "ajustar_brillo", lambda m: {"nivel": 10}),
+    (r"(?:poné|pone|pon|poner|bajá|baja|bajar)\s+(?:el\s+)?volumen\s+(?:al\s+)?(?:mínimo|minimo)$",
+     "ajustar_volumen", lambda m: {"nivel": 0}),
+
     # Abrir programa
-    (r"(?:abrí|abri|abre|abrir|ejecutar|ejecutá)\s+(?:el\s+|la\s+|los\s+)?(.+)",
+    (r"(?:abrí|abri|abre|abrir|ejecutar|ejecutá)\s+(?!(?:el\s+|la\s+)?(?:archivo|carpeta|documento)\b)(?:el\s+|la\s+|los\s+)?(.+)",
      "abrir_programa", lambda m: {"nombre": m.group(1).strip().strip('"')}),
 
     # Cerrar programa
-    (r"(?:cerrá|cerra|cierra|cerrar)\s+(?:el\s+|la\s+)?(.+)",
+    (r"(?:cerrá|cerra|cierra|cerrar)\s+(?!sesi[oó]n\b)(?:el\s+|la\s+)?(.+)",
      "cerrar_programa", lambda m: {"nombre": m.group(1).strip().strip('"')}),
 
     # Clima
@@ -313,15 +332,20 @@ PATRONES = [
 
 # ─── FUNCIÓN PRINCIPAL ────────────────────────────────────────────────────────
 
-def pre_parsear(mensaje: str) -> dict | None:
+def _pre_parsear_base(mensaje: str) -> dict | None:
     """
     Intenta resolver el mensaje sin llamar a la IA.
     Retorna dict con accion+parametros, o None si no puede resolverlo.
     """
     msg = mensaje.lower().strip()
 
-    # Limpiar signos de puntuación al final
-    msg = msg.rstrip("?.!")
+    # Limpiar signos sobrantes (ej: "abre la calculadora}")
+    msg = msg.strip(" ¿¡?!.,;:{}[]()<>\"'")
+
+    # Comandos compuestos ("abrí chrome y buscá gatos") → los resuelve la IA
+    if re.match(r"(?:abrí|abri|abre|abrir|cerrá|cerra|cierra|cerrar|ejecutar|ejecutá)\s", msg) \
+            and re.search(r"\s(?:y|e|luego|después|despues)\s", msg):
+        return None
 
     # 1 — Búsqueda exacta
     if msg in COMANDOS_EXACTOS:
@@ -349,4 +373,66 @@ def pre_parsear(mensaje: str) -> dict | None:
                 continue
 
     # No pudo resolver → delegar a la IA
+    return None
+
+
+
+# ─── TOLERANCIA A ERRORES DE TIPEO (pip install rapidfuzz) ────────────────────
+
+_VERBOS = [
+    "subí", "subi", "sube", "subir", "bajá", "baja", "bajar", "poné", "pone", "pon", "poner",
+    "ajustá", "ajusta", "ajustar", "abrí", "abri", "abre", "abrir", "ejecutá", "ejecutar",
+    "cerrá", "cerra", "cierra", "cerrar", "buscá", "busca", "buscar", "creá", "crea", "crear",
+    "reproducí", "reproduce", "traducí", "traduce", "traducir", "calculá", "calcula", "calcular",
+    "generá", "genera", "generar", "apagá", "apagar", "silencia", "silenciar", "recordame",
+]
+_CLAVES = [
+    "volumen", "brillo", "carpeta", "archivo", "sonido", "silencio", "máximo", "maximo",
+    "mínimo", "minimo", "contraseña", "captura", "pantalla",
+]
+# Comandos que NUNCA se aceptan por parecido (pueden hacer daño si se malinterpretan)
+_NO_FUZZY = {
+    "reiniciar_pc", "suspender_pc", "bloquear_pc",
+    "limpiar_notas", "limpiar_tareas_completadas", "limpiar_historial_portapapeles",
+}
+_CLAVES_FUZZY = [k for k, (a, _) in COMANDOS_EXACTOS.items() if a not in _NO_FUZZY]
+
+
+def _corregir(msg: str) -> str:
+    palabras = msg.split()
+    if not palabras:
+        return msg
+    if palabras[0] not in _VERBOS and len(palabras[0]) >= 3:
+        m = process.extractOne(palabras[0], _VERBOS, scorer=fuzz.ratio, score_cutoff=75)
+        if m:
+            palabras[0] = m[0]
+    for i in range(1, len(palabras)):
+        if len(palabras[i]) >= 5 and palabras[i] not in _CLAVES:
+            m = process.extractOne(palabras[i], _CLAVES, scorer=fuzz.ratio, score_cutoff=80)
+            if m:
+                palabras[i] = m[0]
+    return " ".join(palabras)
+
+
+def pre_parsear(mensaje: str) -> dict | None:
+    r = _pre_parsear_base(mensaje)
+    if r or fuzz is None:
+        return r
+
+    msg = mensaje.lower().strip().strip(" ¿¡?!.,;:{}[]()<>\"'")
+
+    # 1) corregir el verbo y las palabras clave, y reintentar
+    corregido = _corregir(msg)
+    if corregido != msg:
+        r = _pre_parsear_base(corregido)
+        if r:
+            return r
+
+    # 2) parecido a un comando exacto ("cuanta rma tengo", "estdo del sistema")
+    if len(msg) >= 6 and not re.search(r"\d", msg):
+        m = process.extractOne(msg, _CLAVES_FUZZY, scorer=fuzz.ratio, score_cutoff=88)
+        if m:
+            accion, params = COMANDOS_EXACTOS[m[0]]
+            return {"accion": accion, "parametros": params,
+                    "descripcion": f"Ejecutar {accion}", "fast": True}
     return None

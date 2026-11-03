@@ -2,61 +2,6 @@
   "conversaciones": [
     {
       "rol": "user",
-      "contenido": "Como estan los discos?",
-      "timestamp": "2026-10-29T17:07:47.867196"
-    },
-    {
-      "rol": "user",
-      "contenido": "Cuanto espacio tengo?",
-      "timestamp": "2026-10-29T17:07:58.527723"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar obtener_disco",
-      "timestamp": "2026-10-29T17:07:58.535525"
-    },
-    {
-      "rol": "user",
-      "contenido": "Como esta el dia?",
-      "timestamp": "2026-10-29T17:08:32.327397"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar obtener_disco",
-      "timestamp": "2026-10-29T17:08:32.336439"
-    },
-    {
-      "rol": "user",
-      "contenido": "como esta el dia?",
-      "timestamp": "2026-10-29T17:08:37.364821"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar obtener_disco",
-      "timestamp": "2026-10-29T17:08:37.372214"
-    },
-    {
-      "rol": "user",
-      "contenido": "sube el brillo al 100%",
-      "timestamp": "2026-11-03T14:46:12.572017"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar ajustar_brillo",
-      "timestamp": "2026-11-03T14:46:12.582115"
-    },
-    {
-      "rol": "user",
-      "contenido": "sube el brillo al 100%",
-      "timestamp": "2026-11-03T14:46:19.408631"
-    },
-    {
-      "rol": "assistant",
-      "contenido": "Ejecutar ajustar_brillo",
-      "timestamp": "2026-11-03T14:46:19.416008"
-    },
-    {
-      "rol": "user",
       "contenido": "sub el volumen",
       "timestamp": "2026-11-03T14:46:24.110269"
     },
@@ -99,6 +44,61 @@
       "rol": "user",
       "contenido": "Hola",
       "timestamp": "2026-11-03T14:47:17.610243"
+    },
+    {
+      "rol": "user",
+      "contenido": "Hola",
+      "timestamp": "2026-11-03T15:06:08.504247"
+    },
+    {
+      "rol": "user",
+      "contenido": "Hola",
+      "timestamp": "2026-11-03T15:11:20.843397"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Hola",
+      "timestamp": "2026-11-03T15:11:22.202349"
+    },
+    {
+      "rol": "user",
+      "contenido": "busca info sobre los dinosaurios",
+      "timestamp": "2026-11-03T15:11:47.856527"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar buscar_en_internet",
+      "timestamp": "2026-11-03T15:11:47.864961"
+    },
+    {
+      "rol": "user",
+      "contenido": "Dime algo interesante",
+      "timestamp": "2026-11-03T15:12:38.520414"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Los dinosaurios no eran todos gigantes; de hecho, el Microraptor era del tamaño de un cuervo y podía planear entre los árboles usando plumas en sus alas y su cola.",
+      "timestamp": "2026-11-03T15:12:39.258413"
+    },
+    {
+      "rol": "user",
+      "contenido": "Hola",
+      "timestamp": "2026-11-03T15:22:07.415158"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Hola",
+      "timestamp": "2026-11-03T15:22:08.403394"
+    },
+    {
+      "rol": "user",
+      "contenido": "Busca alguna info relevante",
+      "timestamp": "2026-11-03T15:22:16.019726"
+    },
+    {
+      "rol": "assistant",
+      "contenido": "Ejecutar buscar_en_internet",
+      "timestamp": "2026-11-03T15:22:16.029836"
     }
   ],
   "contexto": {}

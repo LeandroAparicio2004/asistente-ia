@@ -1306,3 +1306,5 @@ La historia de la Argentina es la cronología de sucesos desde el comienzo del p
 [2026-11-03 14:46:29] ACCION: ajustar_volumen | PARAMS: nivel=20 | RESULTADO: 🔊 Volumen ajustado a 20%
 [2026-11-03 14:46:36] ACCION: ajustar_volumen | PARAMS: nivel=50 | RESULTADO: 🔊 Volumen ajustado a 50%
 [2026-11-03 14:46:44] ACCION: subir_volumen | PARAMS:  | RESULTADO: 🔊 Volumen subido a 60%
+[2026-11-03 15:11:49] ACCION: buscar_en_internet | PARAMS: consulta=info sobre los dinosaurios | RESULTADO: ❌ No encontré resultados para 'info sobre los dinosaurios'.
+[2026-11-03 15:22:17] ACCION: buscar_en_internet | PARAMS: consulta=alguna info relevante | RESULTADO: ❌ No encontré resultados para 'alguna info relevante'.

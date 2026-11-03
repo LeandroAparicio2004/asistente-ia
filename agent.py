@@ -13,9 +13,9 @@ if GEMINI_API_KEY:
 # ─── MODELOS ──────────────────────────────────────────────────────────────────
 
 MODELOS = [
-    {"tipo": "groq",   "modelo": "llama-3.3-70b-versatile", "nombre": "LLaMA 3.3 70B"},
-    {"tipo": "groq",   "modelo": "llama-3.1-8b-instant",    "nombre": "LLaMA 3.1 8B"},
-    {"tipo": "gemini", "modelo": "gemini-1.5-flash",         "nombre": "Gemini Flash"},
+    {"tipo": "groq",   "modelo": "openai/gpt-oss-120b", "nombre": "GPT-OSS 120B"},
+    {"tipo": "groq",   "modelo": "openai/gpt-oss-20b",  "nombre": "GPT-OSS 20B"},
+    {"tipo": "gemini", "modelo": "gemini-3.6-flash",    "nombre": "Gemini Flash"},
 ]
 
 # ─── CATEGORÍAS DE ACCIONES ───────────────────────────────────────────────────

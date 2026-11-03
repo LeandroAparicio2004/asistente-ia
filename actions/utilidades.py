@@ -96,7 +96,7 @@ def corregir_texto(texto: str) -> str:
 
         client = Groq(api_key=GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="openai/gpt-oss-20b",
             messages=[
                 {
                     "role": "system",
@@ -165,7 +165,7 @@ def analizar_imagen(nombre_imagen: str, pregunta: str = "") -> str:
         # Llamar a Gemini Vision
         client = genai.Client(api_key=GEMINI_API_KEY)
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-3.6-flash",
             contents=[
                 types.Content(
                     parts=[

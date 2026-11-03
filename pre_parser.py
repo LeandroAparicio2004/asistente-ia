@@ -1,4 +1,5 @@
 import re
+import unicodedata
 
 try:
     from rapidfuzz import fuzz, process
@@ -413,6 +414,46 @@ def _corregir(msg: str) -> str:
                 palabras[i] = m[0]
     return " ".join(palabras)
 
+def _sin_acentos(texto: str) -> str:
+    texto = unicodedata.normalize("NFD", texto)
+    return "".join(c for c in texto if unicodedata.category(c) != "Mn")
+
+
+def _tolerante(mensaje: str) -> dict | None:
+    """Segunda pasada: entiende errores de tipeo, 'al 60%', 'máximo', etc. sin IA."""
+    t = _sin_acentos(mensaje.lower())
+    t = re.sub(r"[^\w\s]", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+
+    # Si pide volumen y brillo a la vez, que lo resuelva la IA
+    if re.search(r"\bvolumen\b", t) and re.search(r"\bbrillo\b", t):
+        return None
+
+    for objeto in ("volumen", "brillo"):
+        if not re.search(rf"\b{objeto}\b", t):
+            continue
+
+        nivel = None
+        m = re.search(r"\b(?:al|a|en|hasta)\s+(\d{1,3})\b", t)
+        if m:
+            nivel = min(100, int(m.group(1)))
+        elif re.search(r"\bmaximo\b", t):
+            nivel = 100
+        elif re.search(r"\bminimo\b", t):
+            nivel = 0
+
+        if nivel is not None:
+            accion, params = f"ajustar_{objeto}", {"nivel": nivel}
+        elif re.search(r"\b(?:sub\w*|aument\w*|mas)\b", t):
+            accion, params = f"subir_{objeto}", {}
+        elif re.search(r"\b(?:baj\w*|redu\w*|menos)\b", t):
+            accion, params = f"bajar_{objeto}", {}
+        else:
+            continue
+
+        return {"accion": accion, "parametros": params,
+                "descripcion": f"Ejecutar {accion}", "fast": True}
+    return None
 
 def pre_parsear(mensaje: str) -> dict | None:
     r = _pre_parsear_base(mensaje)
@@ -435,4 +476,4 @@ def pre_parsear(mensaje: str) -> dict | None:
             accion, params = COMANDOS_EXACTOS[m[0]]
             return {"accion": accion, "parametros": params,
                     "descripcion": f"Ejecutar {accion}", "fast": True}
-    return None
+    return _tolerante(msg)
